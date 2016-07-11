@@ -10,13 +10,15 @@
 {{--<script type="text/javascript" src="{{asset('admin/dist/lib/js/ace/ace.js')}}"></script>--}}
 {{--<script type="text/javascript" src="{{asset('admin/dist/lib/js/ace/mode-html.js')}}"></script>--}}
 {{--<script type="text/javascript" src="{{asset('admin/dist/lib/js/ace/theme-github.js')}}"></script>--}}
-<!-- Javascript -->
+        <!-- Javascript -->
 {{--<script type="text/javascript" src="{{asset('admin/dist/js/app.js')}}"></script>--}}
 {{--<script type="text/javascript" src="{{asset('admin/dist/js/index.js')}}"></script>--}}
 
 <script>
     var env = {
-        apiRoot: 'http://api.{{ env("APP_DOMAIN") }}/v1'
+        apiVersion: '{{env('API_VERSION')}}',
+        apiRoot: 'http://api.{{ env("APP_DOMAIN") }}/{{env('API_VERSION')}}',
+        appName: '{{env("APP_NAME")}}'
     };
 </script>
 <script data-main="admin/app/main" src="{{asset('admin/app/lib/requirejs/require.js')}}"></script>

@@ -19,9 +19,9 @@
             </button>
         </div>
         <ul class="nav navbar-nav navbar-right">
-            {{--<button type="button" class="navbar-right-expand-toggle pull-right visible-xs">--}}
-            {{--<i class="fa fa-times icon"></i>--}}
-            {{--</button>--}}
+            <button type="button" class="navbar-right-expand-toggle pull-right visible-xs">
+                <i class="fa fa-times icon"></i>
+            </button>
             {{--<li class="dropdown">--}}
             {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i--}}
             {{--class="fa fa-comments-o"></i></a>--}}
