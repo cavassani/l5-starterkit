@@ -3,7 +3,9 @@ var gulp = require('gulp'),
     phpunit = require('gulp-phpunit'),
     run = require('gulp-run'),
     guppy = require('git-guppy')(gulp),
-    prompt = require('gulp-prompt');
+    prompt = require('gulp-prompt'),
+    sass = require('gulp-sass'),
+    sourcemaps = require('gulp-sourcemaps');
 
 /**
  *
@@ -59,6 +61,24 @@ gulp.task('bluenote', function () {
             run('yo bluenote ' + r.moduleName + ' --skip-install').exec();
             return r;
         }));
+});
+
+gulp.task('sass-admin', function () {
+
+    var input = './public/admin/scss/**/*.scss',
+        output = './public/admin/css',
+        sassOptions = {
+            errLogToConsole: true,
+            outputStyle: 'expanded'
+        };
+
+    return gulp
+        .src(input)
+        .pipe(sourcemaps.init())
+        .pipe(sass(sassOptions).on('error', sass.logError))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(output));
+
 });
 
 /**
