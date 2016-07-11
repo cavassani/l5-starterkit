@@ -33,9 +33,9 @@ define([
          */
         this.menuEntries = [
             {
-                title: 'users',
+                title: 'Usuários',
                 route: 'users',
-                iconClass: 'fa fa-star',
+                iconClass: 'fa fa-users',
                 order: 2,
                 accessLevel: 1
             }

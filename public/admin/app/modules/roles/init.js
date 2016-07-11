@@ -29,13 +29,13 @@ define([
 
         /**
          *  Definição das rotas que devem aparecer
-         *  no menu principal da applicação
+         *  no menu principal da appligit cação
          */
         this.menuEntries = [
             {
-                title: 'roles',
+                title: 'Roles',
                 route: 'roles',
-                iconClass: 'fa fa-star',
+                iconClass: 'fa fa-lock',
                 order: 2,
                 accessLevel: 1
             }

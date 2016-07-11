@@ -17,6 +17,7 @@
         @include('backend.partials.content')
     </div>
     <div id="dialog"></div>
+    <div id="modal-area"></div>
     @include('backend.partials.footer')
     @include('backend.partials.jsDefault')
 </div>
