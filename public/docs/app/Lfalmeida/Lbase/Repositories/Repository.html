@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Lfalmeida\Lbase\Repositories\Repository | StarterKit</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/sami.css">
+        <script src="../../../js/jquery-1.11.1.min.js"></script>
+        <script src="../../../js/bootstrap.min.js"></script>
+        <script src="../../../js/typeahead.min.js"></script>
+        <script src="../../../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Lfalmeida_Lbase_Repositories_Repository" data-root-path="../../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <form id="search-form" action="../../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../../index.html">StarterKit</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../../classes.html">Classes</a></li>
+                                            <li><a href="../../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../../traits.html">Traits</a></li>
+                    <li><a href="../../../doc-index.html">Index</a></li>
+                    <li><a href="../../../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                                                            <li><a href="../../../Lfalmeida.html">Lfalmeida</a></li>
+                                        <li><a href="../../../Lfalmeida/Lbase.html">Lbase</a></li>
+                                        <li><a href="../../../Lfalmeida/Lbase/Repositories.html">Repositories</a></li>
+    
+                <li>Repository</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>
+            Repository
+                
+        </h1>
+    </div>
+
+    <p>    class
+    <strong>Repository</strong>        implements
+        <a href="../../../Lfalmeida/Lbase/Contracts/RepositoryInterface.html"><abbr title="Lfalmeida\Lbase\Contracts\RepositoryInterface">RepositoryInterface</abbr></a>
+</p>
+
+        
+    
+
+            <div class="description">
+            <p>Class Repository</p>            <p>O objetivo desta classe é servir como base para os repositórios dos sistema utilizando Eloquent.</p>        </div>
+    
+    
+    
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___construct">__construct</a>(<abbr title="Illuminate\Container\Container">Container</abbr> $app)
+        
+                                            <p>Repository constructor.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Illuminate\Database\Eloquent\Model">Model</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_makeModel">makeModel</a>()
+        
+                                            <p>Retorna uma instância do Model gerenciado por este repositório</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_model">model</a>()
+        
+                                            <p>Este é um método de configuração, que retorna uma string com o nome incluindo o namespace do Model que este
+repositório irá gerenciar.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Lfalmeida/Lbase/Repositories/Repository.html"><abbr title="Lfalmeida\Lbase\Repositories\Repository">Repository</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setRelationships">setRelationships</a>(array $relationships = array())
+        
+                                            <p>Método setter para a propriedade $relationships</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    mixed
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_all">all</a>(array $columns = array(&#039;*&#039;))
+        
+                                            <p>Retorna todos os registros deste Model.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    mixed
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_countAll">countAll</a>()
+        
+                                            <p>Retorna o total de Models cadastrados.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    mixed
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_paginate">paginate</a>(int $perPage = 15, array $columns = array(&#039;*&#039;), string $sort = &#039;&#039;, string $order = &#039;asc&#039;)
+        
+                                            <p>Retorna resultados paginados.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    mixed
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_create">create</a>(array $data)
+        
+                                            <p>Cria um registro</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    mixed
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_find">find</a>(integer $id, array $columns = array(&#039;*&#039;))
+        
+                                            <p>Encontra um Model através do Id</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    mixed
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_update">update</a>(integer $id, array $data)
+        
+                                            <p>Atualiza um model de acordo com id fornecido e as propriedades informadas</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    mixed
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_delete">delete</a>(integer $id)
+        
+                                            <p>Remove um registro através do id fornecido</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    mixed
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_findBy">findBy</a>(string $attribute, string|integer $value, array $columns = array(&#039;*&#039;))
+        
+                                            <p>Encontra registros através dos dados fornecidos.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    mixed
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_search">search</a>(array $params)
+        
+                                            <p>Realiza uma busca utilizando os parâmetros fornecidos.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method___construct">
+        <div class="location">at         line 64</div>
+        <code>                    
+    <strong>__construct</strong>(<abbr title="Illuminate\Container\Container">Container</abbr> $app)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Repository constructor.</p>                    <p>No construtor, recebemos uma instância do Container e atrelamos a este objeto para utilização nos
+demais métodos.</p>            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><abbr title="Illuminate\Container\Container">Container</abbr></td>
+                <td>$app</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_makeModel">
+        <div class="location">at         line 76</div>
+        <code>                    <abbr title="Illuminate\Database\Eloquent\Model">Model</abbr>
+    <strong>makeModel</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Retorna uma instância do Model gerenciado por este repositório</p>                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Illuminate\Database\Eloquent\Model">Model</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Lfalmeida/Lbase/Exceptions/RepositoryException.html"><abbr title="Lfalmeida\Lbase\Exceptions\RepositoryException">RepositoryException</abbr></a></td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_model">
+        <div class="location">at         line 99</div>
+        <code>    abstract                string
+    <strong>model</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Este é um método de configuração, que retorna uma string com o nome incluindo o namespace do Model que este
+repositório irá gerenciar.</p>                    <p>Como é um método abstrato, forçamos todas as classes que derivarem desta classe, implementarem este método,
+onde cada classe definirá poderá indicar o seu próprio Model.</p>            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setRelationships">
+        <div class="location">at         line 119</div>
+        <code>                    <a href="../../../Lfalmeida/Lbase/Repositories/Repository.html"><abbr title="Lfalmeida\Lbase\Repositories\Repository">Repository</abbr></a>
+    <strong>setRelationships</strong>(array $relationships = array())
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Método setter para a propriedade $relationships</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array</td>
+                <td>$relationships</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Lfalmeida/Lbase/Repositories/Repository.html"><abbr title="Lfalmeida\Lbase\Repositories\Repository">Repository</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_all">
+        <div class="location">at         line 132</div>
+        <code>                    mixed
+    <strong>all</strong>(array $columns = array(&#039;*&#039;))
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Retorna todos os registros deste Model.</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array</td>
+                <td>$columns</td>
+                <td>Array com as colunas desejadas no retorno, por padrão, são retornadas todas</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>mixed</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_countAll">
+        <div class="location">at         line 145</div>
+        <code>                    mixed
+    <strong>countAll</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Retorna o total de Models cadastrados.</p>                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>mixed</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_paginate">
+        <div class="location">at         line 161</div>
+        <code>                    mixed
+    <strong>paginate</strong>(int $perPage = 15, array $columns = array(&#039;*&#039;), string $sort = &#039;&#039;, string $order = &#039;asc&#039;)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Retorna resultados paginados.</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int</td>
+                <td>$perPage</td>
+                <td>Define a quantidade de registros por página</td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$columns</td>
+                <td>Array com as colunas desejadas no retorno, por padrão, são retornadas todas</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$sort</td>
+                <td>Coluna para ordenação.</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$order</td>
+                <td>Direção da ordenação.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>mixed</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_create">
+        <div class="location">at         line 185</div>
+        <code>                    mixed
+    <strong>create</strong>(array $data)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Cria um registro</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array</td>
+                <td>$data</td>
+                <td>Array associativo com as colunas e valores a serem salvos</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>mixed</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../App/Exceptions/ApiException.html"><abbr title="App\Exceptions\ApiException">ApiException</abbr></a></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><a href="../../../App/Exceptions/ValidationException.html"><abbr title="App\Exceptions\ValidationException">ValidationException</abbr></a></td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_find">
+        <div class="location">at         line 216</div>
+        <code>                    mixed
+    <strong>find</strong>(integer $id, array $columns = array(&#039;*&#039;))
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Encontra um Model através do Id</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>integer</td>
+                <td>$id</td>
+                <td>Id da entidade</td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$columns</td>
+                <td>$data Array associativo com as colunas e valores a serem atualizados</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>mixed</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_update">
+        <div class="location">at         line 230</div>
+        <code>                    mixed
+    <strong>update</strong>(integer $id, array $data)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Atualiza um model de acordo com id fornecido e as propriedades informadas</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>integer</td>
+                <td>$id</td>
+                <td>Id da entidade</td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$data</td>
+                <td>Array associativo com as colunas e valores a serem atualizados</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>mixed</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Lfalmeida/Lbase/Exceptions/RepositoryException.html"><abbr title="Lfalmeida\Lbase\Exceptions\RepositoryException">RepositoryException</abbr></a></td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_delete">
+        <div class="location">at         line 254</div>
+        <code>                    mixed
+    <strong>delete</strong>(integer $id)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Remove um registro através do id fornecido</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>integer</td>
+                <td>$id</td>
+                <td>Id da entidade</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>mixed</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Lfalmeida/Lbase/Exceptions/RepositoryException.html"><abbr title="Lfalmeida\Lbase\Exceptions\RepositoryException">RepositoryException</abbr></a></td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_findBy">
+        <div class="location">at         line 274</div>
+        <code>                    mixed
+    <strong>findBy</strong>(string $attribute, string|integer $value, array $columns = array(&#039;*&#039;))
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Encontra registros através dos dados fornecidos.</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$attribute</td>
+                <td>Coluna para a busca</td>
+            </tr>
+                    <tr>
+                <td>string|integer</td>
+                <td>$value</td>
+                <td>Valor a ser buscadp</td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$columns</td>
+                <td>Array com as colunas desejadas no retorno, por padrão, são retornadas todas</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>mixed</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_search">
+        <div class="location">at         line 293</div>
+        <code>                    mixed
+    <strong>search</strong>(array $params)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Realiza uma busca utilizando os parâmetros fornecidos.</p>                    <p>Os parâmetros analisados no array $params são <strong>search e pageSize</strong>.</p>
+
+<ul>
+<li><strong>search</strong>: string com o termo da busca</li>
+<li><strong>pageSize</strong>: integer Resutados por página</li>
+</ul>
+</p>            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array</td>
+                <td>$params</td>
+                <td>Array com parâmetros para realização da busca</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>mixed</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>
