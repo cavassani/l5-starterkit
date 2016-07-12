@@ -15,6 +15,8 @@ use Zizaco\Entrust\Traits\EntrustUserTrait;
 class User extends BaseModel implements AuthenticatableContract, AuthorizableContract, CanResetPasswordContract
 {
     use Authenticatable, EntrustUserTrait, CanResetPassword;
+
+    protected $searchableColumns = ['name'];
     /**
      * Regras de validação deste model
      *
