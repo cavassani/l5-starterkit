@@ -32,7 +32,8 @@ require.config({
         'jquery-media': 'lib/jquery.media',
         'bootstrap-switch': 'lib/bootstrap-switch/dist/js/bootstrap-switch.min',
         daterangepicker: 'lib/bootstrap-daterangepicker/daterangepicker',
-        echarts: 'lib/echarts/dist/echarts'
+        echarts: 'lib/echarts/dist/echarts',
+        select2: 'lib/select2.full.min'
     },
 
     shim: {
@@ -93,6 +94,10 @@ require.config({
         datetimepicker: {
             deps: ['jquery']
         },
+        select2: {
+            deps: ['jquery']
+        },
+
         daterangepicker: {deps: ['jquery', 'moment']}
     },
 

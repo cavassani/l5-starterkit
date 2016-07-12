@@ -31,7 +31,7 @@ define([], function () {
                 if (response.status === 'success') {
                     $(conf.selector).empty();
 
-                    var optionsData = '<option></option>';
+                    var optionsData = '';
 
                     _.each(response.data, function (item) {
                         optionsData = optionsData + compile(item);
@@ -40,7 +40,7 @@ define([], function () {
                     $(conf.selector).append(optionsData);
 
                     if (typeof conf.callback === 'function') {
-                        conf.callback();
+                        conf.callback($(conf.selector));
                     }
                 }
             }.bind(this));

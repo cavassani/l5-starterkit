@@ -231,6 +231,7 @@ define(['backbone.paginator', 'jquery'], function () {
 
             app.commands.execute("app:dialog:confirm", {
                 icon: 'info-sign',
+                customClass: 'modal-danger',
                 title: '<span class="text-center"><i class="fa fa-warning"></i> Atenção!</span>',
                 message: '<h3 style="color: #d9534f" class="text-center"><strong>Deseja realmente excluir este item?</strong></h3>' +
                 '<p class="alert text-center "> <strong>Atenção: Esta operação não pode ser desfeita!</strong></p>',

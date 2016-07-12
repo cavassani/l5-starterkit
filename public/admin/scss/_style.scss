@@ -307,13 +307,13 @@ a:hover {
         border-bottom: 0 solid #e7e7e7;
 
         .navbar-brand {
-          width: 455px;
           line-height: 60px;
           height: 60px;
           padding: 0;
           width: 100%;
           overflow: hidden;
           font-family: 'Roboto Condensed', sans-serif;
+          font-size: 2em;
 
           .icon {
             width: 60px;
@@ -326,6 +326,7 @@ a:hover {
             display: none;
           }
         }
+
         .navbar-expand-toggle {
           position: absolute;
           right: 0;
@@ -359,7 +360,7 @@ a:hover {
             line-height: 46px;
             display: block;
             white-space: nowrap;
-
+            font-size: 1.1em;
             .icon {
               margin-left: 0;
               width: 38px;
@@ -671,7 +672,6 @@ a:hover {
         font-size: 1.5em;
         text-decoration: none;
       }
-
       .description {
       }
     }
@@ -697,6 +697,17 @@ a:hover {
 
   .card-jumbotron {
     padding: 1.5em 1.5em;
+  }
+
+  &.card-compact {
+    .card-header {
+      .card-title {
+        padding: 8px 25px;
+      }
+    }
+    .card-body {
+      padding: 10px 25px;
+    }
   }
 }
 
@@ -771,7 +782,7 @@ a:hover {
 .btn {
   margin-top: 5px;
   margin-bottom: 5px;
-  border-radius: 1px;
+  border-radius: 2px;
   border-width: 1px;
   font-family: 'Roboto Condensed', sans-serif;
 }
@@ -943,7 +954,6 @@ body.login-page {
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 0;
-
 
     & > .title {
       margin-bottom: 1em;
@@ -1425,7 +1435,6 @@ body.login-page {
   border-radius: 1px;
 }
 
-
 // Icons Pages
 .icons-list {
   list-style: none;
@@ -1530,7 +1539,6 @@ body.login-page {
     margin-bottom: 5px;
   }
 }
-
 
 .row-example {
   & > [class*="col-"] {

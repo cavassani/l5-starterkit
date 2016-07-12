@@ -26,7 +26,7 @@
 }
 
 .flat-blue .navbar .navbar-header .navbar-brand, .flat-blue .navbar.navbar-default .navbar-header .navbar-brand {
-  color: #F9F9F9;
+  color: #353d47;
 }
 
 .flat-blue .navbar .navbar-header .navbar-expand-toggle, .flat-blue .navbar.navbar-default .navbar-header .navbar-expand-toggle {
@@ -190,12 +190,12 @@
 }
 
 .flat-blue .side-menu .navbar-header {
-  background-color: #22A7F0;
+  background-color: #FFF;
   margin-bottom: 4px;
 }
 
 .flat-blue .side-menu .navbar-header .navbar-brand {
-  color: #19B5FE;
+  color: #353d47;
 }
 
 .flat-blue .side-menu .navbar-nav {
@@ -813,6 +813,11 @@
 
 .flat-blue .table.table-striped > tbody > tr:nth-of-type(odd) {
   background-color: #FDFDFD;
+}
+
+.flat-blue .table .btn {
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 .flat-blue .login-box .login-form .login-header {

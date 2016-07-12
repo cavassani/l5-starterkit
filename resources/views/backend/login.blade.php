@@ -8,21 +8,14 @@
     <title>StarterKit</title>
 
     <!-- Fonts -->
-
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
 
     <!-- Styles -->
-    <link rel="stylesheet" type="text/css" href="{{asset('admin/css/main.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.2/toastr.min.css">
-
-
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/css/main.css')}}">
     <style>
         body {
-            font-family: 'Lato';
-        }
-
-        .fa-btn {
-            margin-right: 6px;
+            font-family: 'Lato', sans-serif;
         }
     </style>
 </head>
@@ -40,10 +33,10 @@
                     <div class="login-body">
                         <form id="admin-login" method="POST" action="{{ url('/login') }}" autocomplete="off">
                             <div class="control">
-                                <input id="email" type="email" class="form-control" name="email" autofocus value=" ">
+                                <input id="email" type="email" class="form-control" name="email" autofocus value="">
                             </div>
                             <div class="control">
-                                <input id="password" type="password" class="form-control" name="password" value=" ">
+                                <input id="password" type="password" class="form-control" name="password" value="" autocomplete="">
                             </div>
                             <div class="login-button text-center">
                                 <button type="submit" id="login-btn" class="btn btn-primary"><i

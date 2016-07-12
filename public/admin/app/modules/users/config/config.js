@@ -4,7 +4,17 @@ define([], function () {
         bindingsCadastro: {
             '#name': 'name',
             '#email': 'email',
-            '#password': 'password'
+            '#password': 'password',
+            '#roles': {
+                observe: 'roles',
+                initialize: function ($el) {
+                    $el.select2({width: '100%', allowClear: true});
+                },
+                onSet: function(val) {
+                    this.model.set('roles', val);
+                    return val;
+                }
+            }
         },
         validation: {
             errorPlacement: function (error, element) {

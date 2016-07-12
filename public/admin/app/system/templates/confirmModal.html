@@ -1,4 +1,6 @@
-<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="static">
+<div class="modal fade <%= typeof customClass != 'undefined' ? customClass : '' %>"
+     tabindex="-1" role="dialog"
+     aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="static">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -9,8 +11,18 @@
                 <%= message %>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success btn-sm confirm_yes" data-dismiss="modal"><span class="fa fa-ok"></span> Confirmar</button>
-                <button type="button" class="btn btn-warning btn-sm confirm_no" data-dismiss="modal"><span class="fa fa-remove"></span> Cancelar</button>
+                <% if(typeof customClass != 'undefined' && customClass == 'modal-danger') { %>
+                <button type="button" class="btn btn-danger btn-sm confirm_yes" data-dismiss="modal"><span
+                        class="fa fa-ok"></span><i class="fa fa-check"></i> Confirmar
+                </button>
+                <% } else { %>
+                <button type="button" class="btn btn-success btn-sm confirm_yes" data-dismiss="modal"><span
+                        class="fa fa-ok"></span><i class="fa fa-check"></i> Confirmar
+                </button>
+                <% } %>
+                <button type="button" class="btn btn-sm btn-default confirm_no" data-dismiss="modal"><span
+                        class="fa fa-remove"></span> Cancelar
+                </button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
