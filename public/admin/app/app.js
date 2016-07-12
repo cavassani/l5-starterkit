@@ -59,6 +59,10 @@ define([
      */
     app.addInitializer(function () {
 
+        if(!app.utils.checkToken()){
+            return false;
+        }
+
         require(['system/init'], function (module) {
             module.start();
 

@@ -9,16 +9,7 @@ define(['jquery'],
 
         var ajax = function (options) {
 
-            if (app.locked && !options.hasOwnProperty('unlock')) {
-                app.utils.notify({
-                    text: 'A aplicação está bloqueada! Esta ação não pode ser realizada.',
-                    type: 'error'
-                });
-                return jQuery.Deferred();
-            }
-
-            var ajax,
-                localStorage = window.localStorage,
+            var localStorage = window.localStorage,
                 token = localStorage.getItem('token'),
                 defaultOptions = {
                     'url': '',
@@ -29,7 +20,10 @@ define(['jquery'],
                     'cache': true,
                     'global': true, // this makes sure ajaxStart is triggered
                     'timeout': 20000,
-                    'error': ajaxErrorHandler
+                    'error': ajaxErrorHandler,
+                    'headers': {
+                        'Authorization': 'Bearer ' + token
+                    }
                 };
 
             if (typeof options === 'object') {
@@ -38,19 +32,21 @@ define(['jquery'],
                 options = defaultOptions;
             }
 
-            if (token) {
-                //options.data.token = token;
-                options.headers = {
-                    'authorization': 'Bearer ' + token
-                };
+            if (!app.utils.checkToken()) {
+                return jQuery.Deferred();
+            } else if (app.locked && !options.hasOwnProperty('unlock')) {
+                app.utils.notify({
+                    text: 'A aplicação está bloqueada! Esta ação não pode ser realizada.',
+                    type: 'error'
+                });
+                return jQuery.Deferred();
             }
 
             $.ajaxSetup({
                 cache: options.cache,
                 error: function (x, status, error) {
                     if (x.status == 403) {
-                        alert("Sorry, your session has expired. Please login again to continue");
-                        window.location.href = "/Account/Login";
+                        window.location.href = "/login";
                     }
                     else {
                         alert("An error occurred: " + status + "nError: " + error);
@@ -58,10 +54,7 @@ define(['jquery'],
                 }
             });
 
-            ajax = $.ajax(options);
-
-
-            return ajax;
+            return $.ajax(options)
         };
 
 
@@ -74,7 +67,7 @@ define(['jquery'],
                 message = '<strong>' + responseText.message + '</strong>';
                 if (responseText.hasOwnProperty('errors')) {
                     message += '<ul>';
-                    $.each(responseText.errors, function(index, value){
+                    $.each(responseText.errors, function (index, value) {
                         message += '<li>' + value + '</li>'
                     });
                     message += '</ul>';

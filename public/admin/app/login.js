@@ -10,12 +10,11 @@ $(function () {
         "timeout": 10000
     };
 
-    var $form = $('#login'),
+    var $form = $('#admin-login'),
         storage = window.localStorage;
 
     // removendo token atual, caso exista
     delete storage['token'];
-    delete storage['acl'];
 
     $form.validate({
         errorPlacement: function (error, element) {
@@ -56,21 +55,28 @@ $(function () {
                 type: $form.attr('method')
             });
 
-            request.done(function (response) {
-
-                if (response.status === 'success') {
-                    storage.setItem('token', response.data.token);
-                    storage.setItem('acl', response.data.acl);
-                    storage.setItem('name', response.data.fullName);
-                    storage.setItem('username', response.data.userName);
-                    storage.setItem('role', response.data.role);
-                    storage.setItem('uid', response.data.uid);
-                    window.location = env.urlRoot
-                } else {
-                    btn.html(btnOriginalText);
-                    toastr['error'](response.message);
-                }
-            });
+            request.done(function (r) {
+                var token = r.data.token;
+                var setToken = $.ajax({
+                    url: 'login/setToken',
+                    method: $form.attr('method'),
+                    dataType: 'json',
+                    data: {"token": token},
+                    success: function (resp) {
+                        console.log(resp);
+                        window.localStorage.setItem('token', token);
+                        window.location = '/';
+                    },
+                    fail: function (err) {
+                        btn.html(btnOriginalText);
+                        toastr['error'](err.message);
+                    }
+                });
+            }).fail(function (err) {
+                var r = err.responseJSON;
+                btn.html(btnOriginalText);
+                toastr['error'](r.message);
+            })
         }
     });
 });

@@ -10,7 +10,7 @@ Route::group(['domain' => 'admin.' . env('APP_DOMAIN')], function () {
         Route::get('/', 'Back\BackController@index');
     });
 
-    Route::group(['middleware' => ['throttle:3,1']], function () {
+    Route::group(['middleware' => ['throttle:5,1']], function () {
         Route::post('/login', 'Auth\JwtAuthController@login');
         Route::post('/login/setToken', 'Auth\JwtAuthController@setToken');
     });
@@ -42,7 +42,7 @@ $apiRoutes = function () {
     /**
      * Access rate: 3 hits por minuto
      */
-    Route::group(['middleware' => 'throttle:3,1'], function () {
+    Route::group(['middleware' => 'throttle:5,1'], function () {
         Route::post('login', ['uses' => 'Auth\JwtAuthController@login']);
     });
 

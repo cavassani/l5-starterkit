@@ -2,7 +2,6 @@
 <html>
 <head>
     <title>Não há nada aqui.</title>
-    <meta name="robots" content="noindex">
 
     <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
 
@@ -46,7 +45,8 @@
 <body>
 <div class="container">
     <div class="content">
-        <div class="title">Não há nada aqui :(</div>
+        <div class="title">404</div>
+        <p class="message">O página que você procura não foi encontrada.</p>
     </div>
 </div>
 </body>

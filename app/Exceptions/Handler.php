@@ -9,6 +9,7 @@ use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Foundation\Validation\ValidationException;
 use Illuminate\Support\Facades\Response;
 use Symfony\Component\HttpKernel\Exception\HttpException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Whoops\Handler\JsonResponseHandler;
 use Whoops\Handler\PrettyPageHandler;
 
@@ -74,6 +75,11 @@ class Handler extends ExceptionHandler
         if ($e instanceof HttpException && $e->getStatusCode() == 403) {
             return redirect('/login');
         }
+
+        if ($e instanceof NotFoundHttpException) {
+            return response()->view('errors.404', [], 404);
+        }
+
 
         if (config('app.debug')) {
             $whoops->pushHandler(new PrettyPageHandler);

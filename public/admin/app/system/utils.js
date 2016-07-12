@@ -102,6 +102,28 @@ define(['toastr', 'idleTimer'], function (toastr) {
         };
     }
 
+    function setupCheckToken(app) {
+
+        app.utils.checkToken = function () {
+            console.log('teste');
+            if (!window.localStorage.getItem('token')) {
+                app.commands.execute("app:dialog:simple", {
+                    icon: 'info-sign',
+                    title: 'Erro!',
+                    message: '<div class="text-center"><h3 class="text-danger">Acesso não permitido!</h3></div>',
+                    customClass: 'modal-danger'
+                });
+                setTimeout(function () {
+                    window.location = '/login';
+                }, 3000);
+                return false;
+            }
+            return true;
+        };
+
+        setInterval(app.utils.checkToken, 5000);
+    }
+
     function setupPlugins() {
         var body = $('body');
 
@@ -162,6 +184,7 @@ define(['toastr', 'idleTimer'], function (toastr) {
     function set(app) {
         app.utils = app.utils || {};
         setupBackboneHelpers(app);
+        setupCheckToken(app);
         setupNotifiers(app);
         setToggleLoading(app);
         setupPlugins(app);

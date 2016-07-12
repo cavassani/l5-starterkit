@@ -5,7 +5,8 @@ var gulp = require('gulp'),
     guppy = require('git-guppy')(gulp),
     prompt = require('gulp-prompt'),
     sass = require('gulp-sass'),
-    sourcemaps = require('gulp-sourcemaps');
+    sourcemaps = require('gulp-sourcemaps'),
+    autoprefixer = require('gulp-autoprefixer');
 
 /**
  *
@@ -63,22 +64,33 @@ gulp.task('bluenote', function () {
         }));
 });
 
+
+
+var sassAdminInput = './public/admin/scss/**/*.scss',
+    sassAdminOutput = './public/admin/css',
+    autoprefixerOptions = {browsers: ['last 2 versions', '> 5%', 'Firefox ESR']},
+    sassOptions = {
+        errLogToConsole: true,
+        outputStyle: 'expanded'
+    };
+
 gulp.task('sass-admin', function () {
-
-    var input = './public/admin/scss/**/*.scss',
-        output = './public/admin/css',
-        sassOptions = {
-            errLogToConsole: true,
-            outputStyle: 'expanded'
-        };
-
     return gulp
-        .src(input)
+        .src(sassAdminInput)
         .pipe(sourcemaps.init())
         .pipe(sass(sassOptions).on('error', sass.logError))
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest(output));
+        .pipe(autoprefixer(autoprefixerOptions))
+        .pipe(gulp.dest(sassAdminOutput));
+});
 
+
+gulp.task('admin-watch', function () {
+    return gulp
+        .watch(sassAdminInput, ['sass-admin'])
+        .on('change', function (event) {
+            console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
+        });
 });
 
 /**
