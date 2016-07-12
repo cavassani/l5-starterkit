@@ -65,29 +65,60 @@ gulp.task('bluenote', function () {
 });
 
 
+var bootstrapSass = {
+    in: './node_modules/bootstrap-sass/',
+    fonts: {
+        in: ['./node_modules/bootstrap-sass/assets/fonts/bootstrap/*'],
+        out: './public/admin/fonts/'
+    }
+};
 
-var sassAdminInput = './public/admin/scss/**/*.scss',
-    sassAdminOutput = './public/admin/css',
-    autoprefixerOptions = {browsers: ['last 2 versions', '> 5%', 'Firefox ESR']},
-    sassOptions = {
+var fontAwesome = {
+    in: 'node_modules/font-awesome/fonts/*'
+};
+
+var scss = {
+    admin: {
+        in: './public/admin/scss/**/*.scss',
+        out: './public/admin/css'
+    },
+    options: {
         errLogToConsole: true,
-        outputStyle: 'expanded'
-    };
+        outputStyle: 'expanded',
+        includePaths: [
+            bootstrapSass.in + 'assets/stylesheets',
+            './node_modules/font-awesome/scss'
+        ]
+    }
+};
 
-gulp.task('sass-admin', function () {
+
+var autoprefixerOptions = {browsers: ['last 2 versions', '> 5%', 'Firefox ESR']};
+
+// copy bootstrap required fonts to dest
+gulp.task('fonts', function () {
+    gulp.src(bootstrapSass.fonts.in)
+        .pipe(gulp.dest(bootstrapSass.fonts.out));
+
+    return gulp.src(fontAwesome.in)
+        .pipe(gulp.dest(bootstrapSass.fonts.out));
+});
+
+
+gulp.task('sass-admin', ['fonts'], function () {
     return gulp
-        .src(sassAdminInput)
+        .src(scss.admin.in)
         .pipe(sourcemaps.init())
-        .pipe(sass(sassOptions).on('error', sass.logError))
-        .pipe(sourcemaps.write())
+        .pipe(sass(scss.options).on('error', sass.logError))
+        // .pipe(sourcemaps.write())
         .pipe(autoprefixer(autoprefixerOptions))
-        .pipe(gulp.dest(sassAdminOutput));
+        .pipe(gulp.dest(scss.admin.out));
 });
 
 
 gulp.task('admin-watch', function () {
     return gulp
-        .watch(sassAdminInput, ['sass-admin'])
+        .watch(scss.admin.in, ['sass-admin'])
         .on('change', function (event) {
             console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
         });

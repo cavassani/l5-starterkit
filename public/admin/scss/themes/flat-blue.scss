@@ -940,12 +940,13 @@ $theme-danger-color: $color-red;
 
     input {
       background-color: $color-light-grey;
-      border: 1px solid $color-light-grey;
+      border: 1px solid $color-dark-blue;
     }
 
     .login-footer {
       a {
-        color: $color-white;
+        color: $color-dark-black;
+        text-shadow: #fff 0 0 3px;
       }
       a:hover {
         color: $color-white;

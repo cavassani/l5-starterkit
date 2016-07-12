@@ -6,6 +6,8 @@
   },
   "devDependencies": {
     "apidoc": "^0.16.1",
+    "bootstrap-sass": "^3.3.6",
+    "font-awesome": "^4.6.3",
     "generator-bluenote": ">=0.0.5",
     "git-guppy": "~1.2.1",
     "gulp": "^3.9.1",

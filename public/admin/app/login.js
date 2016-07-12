@@ -2,7 +2,7 @@ $(function () {
 
     toastr.options = {
         "type": "info",
-        "positionClass": "toast-bottom-full-width",
+        // "positionClass": "toast-bottom",
         "progressBar": true,
         "closeButton": true,
         "preventDuplicates": true,
@@ -43,7 +43,7 @@ $(function () {
         },
         submitHandler: function () {
 
-            var btn = $('button'),
+            var btn = $('#login-btn'),
                 btnOriginalText = btn.html(),
                 btnLoadingText = 'Aguarde...';
 

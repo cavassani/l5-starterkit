@@ -105,7 +105,6 @@ define(['toastr', 'idleTimer'], function (toastr) {
     function setupCheckToken(app) {
 
         app.utils.checkToken = function () {
-            console.log('teste');
             if (!window.localStorage.getItem('token')) {
                 app.commands.execute("app:dialog:simple", {
                     icon: 'info-sign',
@@ -113,9 +112,9 @@ define(['toastr', 'idleTimer'], function (toastr) {
                     message: '<div class="text-center"><h3 class="text-danger">Acesso não permitido!</h3></div>',
                     customClass: 'modal-danger'
                 });
-                setTimeout(function () {
-                    window.location = '/login';
-                }, 3000);
+
+                window.location = '/login';
+
                 return false;
             }
             return true;
