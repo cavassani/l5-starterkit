@@ -27,31 +27,7 @@ define([
 
             if (this.model.get('id')) {
                 this.loadModel().done(function (r) {
-
-                    $('select').select2({
-                        ajax: {
-                            data: function (params) {
-                                var query = {
-                                    search: params.term,
-                                    disablePagination: true,
-                                    token: window.localStorage.getItem('token')
-                                };
-
-                                return query;
-                            },
-                            processResults: function (r) {
-                                return {
-                                    results: r.data
-                                };
-                            },
-                            url: app.config.getEndPoint('roles'),
-                            delay: 250
-                        }
-                    });
-
-
-                    // this.model.set('roles', [r.data.roles[0].id]);
-                    // this.init();
+                    this.init();
                 }.bind(this));
             } else {
                 this.init();
@@ -65,12 +41,9 @@ define([
         },
 
         updateCombos: function () {
-            utils.updateCombo({
+            utils.updateSelect2({
                 'selector': '#roles',
-                'resourceName': 'roles',
-                'callback': function ($el) {
-                    // $el.select2();
-                }
+                'resourceName': 'roles'
             });
         },
 

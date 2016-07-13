@@ -139,20 +139,32 @@ define(['toastr', 'idleTimer'], function (toastr) {
     }
 
     function setupMenu() {
+
         $(function () {
+            var $appContainer = $('.app-container');
+            var $navbarExpandToggle = $(".navbar-expand-toggle");
+            var $navbarRightExpandToggle = $(".navbar-right-expand-toggle");
 
-            $(".navbar-expand-toggle").click(function () {
-                $(".app-container").toggleClass("expanded");
-                return $(".navbar-expand-toggle").toggleClass("fa-rotate-90");
+            if (JSON.parse(window.localStorage.getItem('menuExpanded'))) {
+                $appContainer.addClass('expanded');
+            } else {
+                $appContainer.removeClass('expanded');
+            }
+
+            $navbarExpandToggle.click(function () {
+                $appContainer.toggleClass("expanded");
+                window.localStorage.setItem('menuExpanded', $appContainer.hasClass('expanded'));
+                return $navbarExpandToggle.toggleClass("fa-rotate-90");
             });
 
-            $(".navbar-right-expand-toggle").click(function () {
-                $(".navbar-right").toggleClass("expanded");
-                return $(".navbar-right-expand-toggle").toggleClass("fa-rotate-90");
+            $navbarRightExpandToggle.click(function () {
+                $(".navbar-right").toggleClass('expanded');
+                window.localStorage.setItem('menuExpanded', $appContainer.hasClass('expanded'));
+                return $navbarRightExpandToggle.toggleClass('fa-rotate-90');
             });
 
-            $(".side-menu .nav .dropdown").on('show.bs.collapse', function () {
-                return $(".side-menu .nav .dropdown .collapse").collapse('hide');
+            $('.side-menu .nav .dropdown').on('show.bs.collapse', function () {
+                return $('.side-menu .nav .dropdown .collapse').collapse('hide');
             });
 
             $(window).on('hashchange', function () {
@@ -168,6 +180,7 @@ define(['toastr', 'idleTimer'], function (toastr) {
             }).ajaxStop(function () {
                 loadingIndicator.hide();
             });
+
         });
     }
 

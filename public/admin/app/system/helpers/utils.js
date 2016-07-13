@@ -8,6 +8,42 @@ define([], function () {
 
     return {
 
+        updateSelect2: function (userOptions) {
+
+            var request,
+                defaults = {
+                    valueProperty: 'id',
+                    labelProperty: 'name',
+                    resourceName: ''
+                },
+                conf = $.extend(defaults, userOptions);
+
+            request = app.dataStore.ajax({
+                type: 'GET',
+                url: app.config.getEndPoint(conf.resourceName),
+                data: {disablePagination: true},
+                token: window.localStorage.getItem('token')
+            });
+
+            request.done(function (response) {
+                var data = [];
+                _.each(response.data, function (item) {
+                    data.push({
+                        id: item[conf.valueProperty],
+                        text: item[conf.labelProperty]
+                    });
+                }, this);
+
+                $(conf.selector).select2({
+                    "data": data
+                });
+
+            }.bind(this));
+
+            return request;
+
+        },
+
         updateCombo: function (userOptions) {
 
             var defaults = {
