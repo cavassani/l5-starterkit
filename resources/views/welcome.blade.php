@@ -8,7 +8,7 @@
                 <div class="panel-heading">Bem vindo</div>
 
                 <div class="panel-body">
-                    StarterKit Home.
+                    {{env('APP_NAME')}} Home.
                 </div>
             </div>
         </div>
