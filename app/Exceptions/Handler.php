@@ -47,7 +47,7 @@ class Handler extends ExceptionHandler
      * @param  \Illuminate\Http\Request $request
      * @param  \Exception               $e
      *
-     * @return \Illuminate\Http\Response
+     * @return mixed | \Illuminate\Http\Response
      */
     public function render($request, Exception $e)
     {
@@ -73,7 +73,7 @@ class Handler extends ExceptionHandler
         }
 
         if ($e instanceof HttpException && $e->getStatusCode() == 403) {
-            return redirect('/login');
+            return redirect($request->url() . '/login');
         }
 
         if ($e instanceof NotFoundHttpException) {

@@ -65,7 +65,7 @@ $(function () {
                     success: function (resp) {
                         console.log(resp);
                         window.localStorage.setItem('token', token);
-                        window.location = '/';
+                        window.location = env.adminRoot;
                     },
                     fail: function (err) {
                         btn.html(btnOriginalText);

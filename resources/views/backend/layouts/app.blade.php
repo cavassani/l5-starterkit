@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>StarterKit</title>
+    <title>{{env('APP_NAME')}}</title>
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css"
@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css"
           integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.2/toastr.min.css">
-
 
     <style>
         body {
@@ -47,43 +46,5 @@
 
 <script type="text/javascript" src="{{asset('admin/app/login.js')}}"></script>
 
-<script>
-//    $(function () {
-//        $('#admin-login').on('submit', function (e) {
-//            e.preventDefault();
-//
-//            var f = $(this);
-//
-//            $.ajax({
-//                url: f.attr('action'),
-//                method: f.attr('method'),
-//                dataType: 'json',
-//                data: f.serialize(),
-//                success: function (r) {
-//                    var token = r.data.token;
-//                    var setToken = $.ajax({
-//                        url: 'login/setToken',
-//                        method: f.attr('method'),
-//                        dataType: 'json',
-//                        data: {"token": token},
-//                        success: function (resp) {
-//                            console.log(resp);
-//                            window.localStorage.setItem('token', token);
-//                            window.location = '/';
-//                        },
-//                        fail: function (err) {
-//                            console.log(err);
-//                        }
-//                    });
-//                },
-//                fail: function (r) {
-//                    console.log(r);
-//                }
-//            });
-//
-//        });
-//    });
-
-</script>
 </body>
 </html>

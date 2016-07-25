@@ -1,8 +1,8 @@
-<?php 
+<?php
 /**
  * Rotas do Admin Backend
  */
-Route::group(['domain' => 'admin.' . env('APP_DOMAIN')], function () {
+$adminRoutes = function () {
 
     Route::group(['middleware' => ['role:admin']], function () {
         Route::get('/', 'Back\BackController@index');
@@ -16,7 +16,11 @@ Route::group(['domain' => 'admin.' . env('APP_DOMAIN')], function () {
     Route::get('/login', 'Auth\JwtAuthController@showLogin');
     Route::get('/logout', 'Auth\JwtAuthController@logout');
 
-});
+};
+
+Route::group(['prefix' => 'adm'], $adminRoutes);
+
+Route::group(['domain' => 'admin.' . env('APP_DOMAIN')], $adminRoutes);
 
 /**
  * Home

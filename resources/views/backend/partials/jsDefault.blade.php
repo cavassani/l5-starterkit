@@ -16,9 +16,8 @@
 
 <script>
     var env = {
-        apiVersion: '{{env('API_VERSION')}}',
-        apiRoot: 'http://api.{{ env("APP_DOMAIN") }}/{{env('API_VERSION')}}',
-        appName: '{{env("APP_NAME")}}'
+        apiRoot: '{{ config('api.root') }}',
+        appName: '{{ env("APP_NAME") }}'
     };
 </script>
 <script data-main="admin/app/main" src="{{asset('admin/app/lib/requirejs/require.js')}}"></script>

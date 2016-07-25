@@ -5,19 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>StarterKit</title>
+    <title>{{env('APP_NAME')}}</title>
 
-    <!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.2/toastr.min.css">
     <link rel="stylesheet" type="text/css" href="{{asset('admin/css/main.css')}}">
-    <style>
-        body {
-            font-family: 'Lato', sans-serif;
-        }
-    </style>
+
 </head>
 <body id="app-layout" class="flat-blue login-page">
 
@@ -31,7 +22,8 @@
                 </div>
                 <div class="col-sm-12">
                     <div class="login-body">
-                        <form id="admin-login" method="POST" action="{{ url('/login') }}" autocomplete="off">
+                        <form id="admin-login" method="POST"
+                              action="{{ config('admin.root') }}/login" autocomplete="off">
                             <div class="control">
                                 <input id="email" type="email" class="form-control" name="email" autofocus value="">
                             </div>
@@ -67,6 +59,12 @@
         src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.2/toastr.min.js"></script>
 
+<script>
+    var env = {
+        adminRoot: '{{ config('admin.root') }}',
+        appName: '{{ env("APP_NAME") }}'
+    };
+</script>
 <script type="text/javascript" src="{{asset('admin/app/login.js')}}"></script>
 
 </body>

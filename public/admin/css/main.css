@@ -12134,8 +12134,7 @@ button.close {
 }
 
 .flat-blue .login-box .login-footer a {
-  color: #232323;
-  text-shadow: #fff 0 0 3px;
+  color: #F9F9F9;
 }
 
 .flat-blue .login-box .login-footer a:hover {
@@ -13292,7 +13291,7 @@ a:hover {
 }
 
 body.login-page {
-  background: url(../img/bg.jpg) no-repeat center center fixed;
+  background: url(../img/bg/a3.jpg) no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -14930,8 +14929,7 @@ a.brackets-effect:focus::after {
 }
 
 .flat-blue .login-box .login-footer a {
-  color: #232323;
-  text-shadow: #fff 0 0 3px;
+  color: #F9F9F9;
 }
 
 .flat-blue .login-box .login-footer a:hover {
