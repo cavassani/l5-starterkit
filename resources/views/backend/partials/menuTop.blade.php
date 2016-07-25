@@ -7,7 +7,7 @@
             <ul class="nav navbar-nav">
                 <li>
                     <div style="min-width: 50px;margin-top: 5px">
-                        <img class="app-busy" src="{{asset('admin/dist/img/loader-blue.gif')}}"/>
+                        <img class="app-busy" src="{{asset('admin/img/loader-blue.gif')}}"/>
                     </div>
                 </li>
             </ul>
@@ -62,7 +62,7 @@
                 </a>
                 <ul class="dropdown-menu animated fadeInDown">
                     <li class="profile-img">
-                        <img src="{{asset('admin/dist/img/profile/unnamed.jpg')}}"
+                        <img src="{{asset('admin/img/profile/unnamed.jpg')}}"
                              class="profile-img">
                     </li>
                     <li>
