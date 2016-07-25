@@ -53,10 +53,8 @@ $apiRoutes = function () {
      */
     Route::group(['middleware' => ['token.role:admin'], 'namespace' => 'Api\V1'], function () {
         Route::resource('users', 'UsersController');
-        Route::resource('posts', 'PostsController');
         Route::resource('roles', 'RolesController');
         Route::resource('users.roles', 'UserRolesController');
-        Route::resource('permissions', 'PermissionsController');
         Route::resource('users.permissions', 'UserPermissionsController');
     });
 
