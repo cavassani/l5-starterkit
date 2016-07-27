@@ -133,4 +133,4 @@ gulp.task('docs', ['apidocs', 'sami-docs']);
 /**
  *
  */
-gulp.task('pre-commit', ['phpunit']);
+ gulp.task('pre-commit', []);
