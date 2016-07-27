@@ -44,9 +44,10 @@ gulp.task('phpunit', function () {
     }
 
     return gulp.src('')
-        .pipe(phpunit(binPath)).on('error', function (a, b) {
-            return false;
-    });
+        .pipe(phpunit(binPath), {
+            stopOnFailure: true,
+            stopOnError: true
+        });
 });
 
 
