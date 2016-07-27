@@ -1,7 +1,17 @@
 <?php
 
+
 return [
-    'root' => '//api.' . env('APP_DOMAIN') . '/' . env('API_VESRION', 'v1')
-//    'root' => '//' . env('APP_DOMAIN') . '/api/' . env('API_VESRION', 'v1')
+    /*
+    |--------------------------------------------------------------------------
+    | API Root
+    |--------------------------------------------------------------------------
+    |
+    | Retorna a url da api com a versão padrão.
+    | Ex.: sprintf('//%s/api/%s', env('APP_DOMAIN'), env('API_VESRION', 'v1'))
+    |
+    |
+    */
+    'root' => sprintf('//api.%s/%s', env('APP_DOMAIN'), env('API_VESRION', 'v1'))
 ];
 
