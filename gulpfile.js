@@ -43,9 +43,8 @@ gulp.task('phpunit', function () {
         binPath = './vendor/bin/phpunit';
     }
 
-    gulp.src('')
+    return gulp.src('')
         .pipe(phpunit(binPath)).on('error', function (a, b) {
-
     });
 });
 
@@ -132,4 +131,4 @@ gulp.task('docs', ['apidocs', 'sami-docs']);
 /**
  *
  */
-gulp.task('pre-commit', ['phpunit', 'docs']);
+gulp.task('pre-commit', ['phpunit']);

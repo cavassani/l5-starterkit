@@ -82,13 +82,54 @@
     </div>
 
     <p>    class
-    <strong>RolesController</strong>        extends <abbr title="Lfalmeida\Lbase\Controllers\ApiBaseController">ApiBaseController</abbr>
+    <strong>RolesController</strong>        extends <a href="../../../../../Lfalmeida/Lbase/Controllers/ApiBaseController.html"><abbr title="Lfalmeida\Lbase\Controllers\ApiBaseController">ApiBaseController</abbr></a>
 </p>
 
         
     
 
     
+            <h2>Traits</h2>
+
+        
+    <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-6">
+                                            <abbr title="Illuminate\Foundation\Auth\Access\AuthorizesRequests">AuthorizesRequests</abbr>
+                                            
+                </div>
+                <div class="col-md-6">
+                    
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <abbr title="Illuminate\Foundation\Auth\Access\AuthorizesResources">AuthorizesResources</abbr>
+                                            
+                </div>
+                <div class="col-md-6">
+                    
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <abbr title="Illuminate\Foundation\Bus\DispatchesJobs">DispatchesJobs</abbr>
+                                            
+                </div>
+                <div class="col-md-6">
+                    
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <abbr title="Illuminate\Foundation\Validation\ValidatesRequests">ValidatesRequests</abbr>
+                                            
+                </div>
+                <div class="col-md-6">
+                    
+                </div>
+            </div>
+            </div>
     
     
     
@@ -100,10 +141,60 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(<a href="../../../../../App/Repositories/RolesRepository.html"><abbr title="App\Repositories\RolesRepository">RolesRepository</abbr></a> $repository)
+                    <a href="#method___construct">__construct</a>(<a href="../../../../../Lfalmeida/Lbase/Contracts/RepositoryInterface.html"><abbr title="Lfalmeida\Lbase\Contracts\RepositoryInterface">RepositoryInterface</abbr></a> $repository)
         
                                             <p>UsersController constructor.</p>                </div>
                 <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Illuminate\Http\Response">Response</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_index">index</a>(<abbr title="Illuminate\Http\Request">Request</abbr> $request)
+        
+                                            <p>Recebe o request e retorna uma lista das entidades com paginação, por padrão.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../../../Lfalmeida/Lbase/Controllers/ApiBaseController.html#method_index"><abbr title="Lfalmeida\Lbase\Controllers\ApiBaseController">ApiBaseController</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Illuminate\Http\Response">Response</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_store">store</a>(<abbr title="Illuminate\Http\Request">Request</abbr> $request)
+        
+                                            <p>Salva uma entidade utilizando o repositório.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../../../Lfalmeida/Lbase/Controllers/ApiBaseController.html#method_store"><abbr title="Lfalmeida\Lbase\Controllers\ApiBaseController">ApiBaseController</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Illuminate\Http\Response">Response</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_show">show</a>(int $id, <abbr title="Illuminate\Http\Request">Request</abbr> $request)
+        
+                                            <p>Retorna uma entidade recuperada através do seu id.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../../../Lfalmeida/Lbase/Controllers/ApiBaseController.html#method_show"><abbr title="Lfalmeida\Lbase\Controllers\ApiBaseController">ApiBaseController</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Illuminate\Http\Response">Response</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_update">update</a>(<abbr title="Illuminate\Http\Request">Request</abbr> $request, int $id)
+        
+                                            <p>Atualiza os dados de uma entidade com base nos dados obtidos no Request.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../../../Lfalmeida/Lbase/Controllers/ApiBaseController.html#method_update"><abbr title="Lfalmeida\Lbase\Controllers\ApiBaseController">ApiBaseController</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Illuminate\Http\Response">Response</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_destroy">destroy</a>(int $id)
+        
+                                            <p>Remove uma entidade específica.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../../../Lfalmeida/Lbase/Controllers/ApiBaseController.html#method_destroy"><abbr title="Lfalmeida\Lbase\Controllers\ApiBaseController">ApiBaseController</abbr></a></small></div>
             </div>
             </div>
 
@@ -115,7 +206,7 @@
                     <h3 id="method___construct">
         <div class="location">at         line 14</div>
         <code>                    
-    <strong>__construct</strong>(<a href="../../../../../App/Repositories/RolesRepository.html"><abbr title="App\Repositories\RolesRepository">RolesRepository</abbr></a> $repository)
+    <strong>__construct</strong>(<a href="../../../../../Lfalmeida/Lbase/Contracts/RepositoryInterface.html"><abbr title="Lfalmeida\Lbase\Contracts\RepositoryInterface">RepositoryInterface</abbr></a> $repository)
         </code>
     </h3>
     <div class="details">
@@ -129,13 +220,251 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td><a href="../../../../../App/Repositories/RolesRepository.html"><abbr title="App\Repositories\RolesRepository">RolesRepository</abbr></a></td>
+                <td><a href="../../../../../Lfalmeida/Lbase/Contracts/RepositoryInterface.html"><abbr title="Lfalmeida\Lbase\Contracts\RepositoryInterface">RepositoryInterface</abbr></a></td>
                 <td>$repository</td>
                 <td></td>
             </tr>
             </table>
 
             
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_index">
+        <div class="location">in <a href="../../../../../Lfalmeida/Lbase/Controllers/ApiBaseController.html#method_index"><abbr title="Lfalmeida\Lbase\Controllers\ApiBaseController">ApiBaseController</abbr></a> at         line 71</div>
+        <code>                    <abbr title="Illuminate\Http\Response">Response</abbr>
+    <strong>index</strong>(<abbr title="Illuminate\Http\Request">Request</abbr> $request)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Recebe o request e retorna uma lista das entidades com paginação, por padrão.</p>                    <p>Este método é o ponto de entrada para alguns outros métodos deste controller, que são direcionados
+de acordo com parâmetros presentes ou não no request.</p>
+
+<p>As chaves possíveis no request são: <strong>disablePagination, search e count</strong>.</p>
+
+<p>Caso estas chaves sejam encontradas no request, apresentarão os seguintes comportamentos:</p>
+
+<ul>
+<li><p><strong>disablePagination</strong>: Mostra uma lista completa, sem paginação, útil no caso de solicitações para
+preenchimento de dropdowns.</p></li>
+<li><p><strong>search</strong>: Indica a execução de uma busca, sendo assim direcionamos para o método de busca neste mesmo
+controller.</p></li>
+<li><p><strong>count</strong>: Retorna apenas o total de resultados encontrados.</p></li>
+<li><p><strong>fields</strong>: String com as colunas desejadas no retorno, separadas por vírgula.</p></li>
+</ul>
+
+<p>Caso esteja presente o parâmetro <strong>search</strong>, os seguintes parâmetros também serão verificados:</p>
+
+<ul>
+<li><p><strong>pageSise</strong>: Inteiro indicando a quantidade de resultados por página.</p></li>
+<li><p><strong>sort</strong>: Coluna para ordenação</p></li>
+<li><p><strong>order</strong>: Direção da ordenação</p></li>
+</ul>
+</p>            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><abbr title="Illuminate\Http\Request">Request</abbr></td>
+                <td>$request</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Illuminate\Http\Response">Response</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_store">
+        <div class="location">in <a href="../../../../../Lfalmeida/Lbase/Controllers/ApiBaseController.html#method_store"><abbr title="Lfalmeida\Lbase\Controllers\ApiBaseController">ApiBaseController</abbr></a> at         line 176</div>
+        <code>                    <abbr title="Illuminate\Http\Response">Response</abbr>
+    <strong>store</strong>(<abbr title="Illuminate\Http\Request">Request</abbr> $request)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Salva uma entidade utilizando o repositório.</p>                    <p>Os parâmentros recebidos no request são repassados para o repositório.</p>            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><abbr title="Illuminate\Http\Request">Request</abbr></td>
+                <td>$request</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Illuminate\Http\Response">Response</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_show">
+        <div class="location">in <a href="../../../../../Lfalmeida/Lbase/Controllers/ApiBaseController.html#method_show"><abbr title="Lfalmeida\Lbase\Controllers\ApiBaseController">ApiBaseController</abbr></a> at         line 196</div>
+        <code>                    <abbr title="Illuminate\Http\Response">Response</abbr>
+    <strong>show</strong>(int $id, <abbr title="Illuminate\Http\Request">Request</abbr> $request)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Retorna uma entidade recuperada através do seu id.</p>                    <p>Este método aceita os seguintes parâmetros fornecidos via Request: <strong>fields</strong>.</p>
+
+<ul>
+<li><strong>fields</strong>: String com as colunas desejadas no retorno, separadas por vírgula.</li>
+</ul>
+</p>            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int</td>
+                <td>$id</td>
+                <td>Id da entidade.</td>
+            </tr>
+                    <tr>
+                <td><abbr title="Illuminate\Http\Request">Request</abbr></td>
+                <td>$request</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Illuminate\Http\Response">Response</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_update">
+        <div class="location">in <a href="../../../../../Lfalmeida/Lbase/Controllers/ApiBaseController.html#method_update"><abbr title="Lfalmeida\Lbase\Controllers\ApiBaseController">ApiBaseController</abbr></a> at         line 223</div>
+        <code>                    <abbr title="Illuminate\Http\Response">Response</abbr>
+    <strong>update</strong>(<abbr title="Illuminate\Http\Request">Request</abbr> $request, int $id)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Atualiza os dados de uma entidade com base nos dados obtidos no Request.</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><abbr title="Illuminate\Http\Request">Request</abbr></td>
+                <td>$request</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>int</td>
+                <td>$id</td>
+                <td>Id da entidade a ser atualizada</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Illuminate\Http\Response">Response</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_destroy">
+        <div class="location">in <a href="../../../../../Lfalmeida/Lbase/Controllers/ApiBaseController.html#method_destroy"><abbr title="Lfalmeida\Lbase\Controllers\ApiBaseController">ApiBaseController</abbr></a> at         line 239</div>
+        <code>                    <abbr title="Illuminate\Http\Response">Response</abbr>
+    <strong>destroy</strong>(int $id)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Remove uma entidade específica.</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int</td>
+                <td>$id</td>
+                <td>Id da entidade que deve ser removida</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Illuminate\Http\Response">Response</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
             
             
                     </div>
