@@ -11,7 +11,7 @@ $iterator = Finder::create()
     ->in(__DIR__ . '/../app');
 
 return new Sami($iterator, [
-    'title' => 'StarterKit',
+    'title' => env('APP_NAME'),
     'cache_dir' => __DIR__ . '/../storage/docs/app',
     'build_dir' => __DIR__ . '/../public/docs/app',
     'default_opened_level' => 1,

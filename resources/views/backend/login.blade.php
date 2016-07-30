@@ -14,32 +14,31 @@
 
 <div class="container">
     <div class="login-box">
-        <div>
-            <div class="login-form row">
-                <div class="col-sm-12 text-center login-header">
-                    <i class="login-logo fa fa-gg fa-5x"></i>
-                    <h4 class="login-title">{{env('APP_NAME')}}</h4>
+        <div class="login-form row">
+            <div class="col-sm-12 text-center login-header">
+                <i class="login-logo fa fa-connectdevelop fa-5x"></i>
+                <h4 class="login-title">{{env('APP_NAME')}}</h4>
+            </div>
+            <div class="col-sm-12">
+                <div class="login-body">
+                    <form id="admin-login" method="POST"
+                          action="{{ config('admin.root') }}/login" autocomplete="off">
+                        <div class="control">
+                            <input id="email" type="email" class="form-control" name="email" autofocus value="">
+                        </div>
+                        <div class="control">
+                            <input id="password" type="password" class="form-control" name="password" value=""
+                                   autocomplete="">
+                        </div>
+                        <div class="login-button text-center">
+                            <button type="submit" id="login-btn" class="btn btn-primary"><i
+                                        class="fa fa-sign-in"></i> Login
+                            </button>
+                        </div>
+                    </form>
                 </div>
-                <div class="col-sm-12">
-                    <div class="login-body">
-                        <form id="admin-login" method="POST"
-                              action="{{ config('admin.root') }}/login" autocomplete="off">
-                            <div class="control">
-                                <input id="email" type="email" class="form-control" name="email" autofocus value="">
-                            </div>
-                            <div class="control">
-                                <input id="password" type="password" class="form-control" name="password" value="" autocomplete="">
-                            </div>
-                            <div class="login-button text-center">
-                                <button type="submit" id="login-btn" class="btn btn-primary"><i
-                                            class="fa fa-sign-in"></i> Login
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="login-footer">
-                        <p class="text-right"><a href="{{ url('/password/reset') }}" class="">Esqueceu a senha?</a></p>
-                    </div>
+                <div class="login-footer">
+                    <p class="text-right"><a href="{{ url('/password/reset') }}" class="">Esqueceu a senha?</a></p>
                 </div>
             </div>
         </div>

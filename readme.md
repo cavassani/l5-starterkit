@@ -24,4 +24,4 @@ Executar a bateria de testes unitários com [phpunit](https://phpunit.de/):
 Ao fazer um commit um hook é disparado gerando a documentação e rodando a bateria de testes.
   
 ## Autenticação com JSON Web Tokens
-ver documentação na seção wiki do projeto: [tymondesigns/jwt-auth](https://github.com/tymondesigns/jwt-auth/wiki)
+Documentação na seção wiki do projeto: [tymondesigns/jwt-auth](https://github.com/tymondesigns/jwt-auth/wiki)
