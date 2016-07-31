@@ -106,7 +106,7 @@ define([
                 });
                 app.vent.trigger('modal:close', {idViewClosed: this.cid});
                 window.location = '#users';
-            });
+            }.bind(this));
         },
 
         events: {
