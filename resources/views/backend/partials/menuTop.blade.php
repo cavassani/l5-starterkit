@@ -62,7 +62,7 @@
                 </a>
                 <ul class="dropdown-menu animated fadeInDown">
                     <li class="profile-img">
-                        <img src="{{asset('admin/img/profile/unnamed.jpg')}}"
+                        <img src="{{Auth::user()->profilePicture()->first()->url .'?'. Auth::user()->profilePictureMeta}}"
                              class="profile-img">
                     </li>
                     <li>

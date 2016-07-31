@@ -3,19 +3,7 @@ define([], function () {
     return {
         bindingsCadastro: {
             '#name': 'name',
-            '#email': 'email',
-            '#password': 'password',
-            '#roles': {
-                observe: 'roles',
-                initialize: function ($el) {
-                    $el.select2({width: '100%', allowClear: true});
-                },
-                onSet: function(val) {
-                    this.model.set('roles', val);
-                    return val;
-                }
-            },
-            '#profilePicture': 'profilePicture'
+            '#description': 'description'
         },
         validation: {
             errorPlacement: function (error, element) {
@@ -26,10 +14,7 @@ define([], function () {
                 'name': {
                     required: true
                 },
-                'email': {
-                    required: true, email: true
-                },
-                'password': {
+                'description': {
                     required: true
                 }
 
@@ -44,21 +29,12 @@ define([], function () {
                         });
                     }
                 },
-                'email': {
+                'description': {
                     required: function () {
                         app.utils.notify({
                             type: 'error',
                             title: '!',
-                            text: 'O campo Email  é obrigatório'
-                        });
-                    }
-                },
-                'password': {
-                    required: function () {
-                        app.utils.notify({
-                            type: 'error',
-                            title: '!',
-                            text: 'O campo Senha é obrigatório'
+                            text: 'O campo Descrição  é obrigatório'
                         });
                     }
                 }
@@ -66,5 +42,4 @@ define([], function () {
 
         }
     };
-
 });

@@ -19,5 +19,8 @@
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^1.6.0",
     "guppy-pre-commit": "^0.3.0"
+  },
+  "dependencies": {
+    "cropper": "^2.3.2"
   }
 }

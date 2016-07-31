@@ -32,6 +32,8 @@ define(['jquery'],
                 options = defaultOptions;
             }
 
+            options.data.XDEBUG_SESSION_START = "PHPSTORM";
+
             if (!app.utils.checkToken()) {
                 return jQuery.Deferred();
             } else if (app.locked && !options.hasOwnProperty('unlock')) {

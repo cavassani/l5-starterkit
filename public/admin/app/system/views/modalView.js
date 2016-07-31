@@ -72,8 +72,8 @@ define([
         },
 
         removeExtraPanel: function (view) {
-            var $panel = view.$el.find('.panel').first();
-            $panel.find('.panel-heading').first().hide();
+            var $panel = view.$el.find('.card').first();
+            $panel.find('.card-header').first().hide();
             $panel.css({
                 'border': 'none',
                 'box-shadow': 'none'

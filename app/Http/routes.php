@@ -52,6 +52,7 @@ $apiRoutes = function () {
      * Acessadas somente com Token
      */
     Route::group(['middleware' => ['token.role:admin'], 'namespace' => 'Api\V1'], function () {
+        Route::controller('files', 'FilesController');
         Route::resource('users', 'UsersController');
         Route::resource('roles', 'RolesController');
         Route::resource('users.roles', 'UserRolesController');
@@ -72,3 +73,8 @@ Route::group(['domain' => 'api.' . env('APP_DOMAIN'), 'middleware' => ['cors']],
     Route::group(['prefix' => 'v1'], $apiRoutes);
 });
 
+
+Route::get('images/{path}', function (League\Glide\Server $server, Illuminate\Http\Request $request, $path) {
+    header("Access-Control-Allow-Origin: *");
+    $server->outputImage($path, $request->all());
+})->where('path', '.*');
