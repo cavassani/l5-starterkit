@@ -1,4 +1,9 @@
 <?php
+
+if (env('APP_ENV') != 'local') {
+    URL::forceSchema('https');
+}
+
 /**
  * Rotas do Admin Backend
  */
