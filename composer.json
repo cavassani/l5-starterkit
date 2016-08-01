@@ -15,9 +15,7 @@
     "barryvdh/laravel-cors": "^0.8.1",
     "lfalmeida/lbase": "dev-master",
     "league/flysystem-aws-s3-v3": "^1.0",
-    "league/glide": "dev-master"
-  },
-  "require-dev": {
+    "league/glide": "dev-master",
     "fzaninotto/faker": "~1.4",
     "mockery/mockery": "0.9.*",
     "phpunit/phpunit": "~4.0",
@@ -25,6 +23,9 @@
     "symfony/dom-crawler": "2.8.*|3.0.*",
     "sami/sami": "dev-master",
     "filp/whoops": "^1.1"
+  },
+  "require-dev": {
+
   },
   "autoload": {
     "classmap": [
