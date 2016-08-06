@@ -356,6 +356,9 @@ define(['backbone.paginator', 'jquery'], function () {
 
         setItemsPerPage: function () {
             var itemsPerPageAuto = parseInt((($(window).height() - 300) / 36));
+            if (itemsPerPageAuto < 1) {
+                itemsPerPageAuto = 1;
+            }
             if (!this.itemsPerPage || this.itemsPerPage == 'auto') {
                 this.itemsPerPage = itemsPerPageAuto;
             }
