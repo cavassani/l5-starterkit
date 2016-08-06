@@ -14,7 +14,8 @@ define([], function () {
                     this.model.set('roles', val);
                     return val;
                 }
-            }
+            },
+            '#profilePicture': 'profilePicture'
         },
         validation: {
             errorPlacement: function (error, element) {

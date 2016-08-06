@@ -1,0 +1,43 @@
+$color-light-gray: #fafafa;
+#login-front {
+  background: rgba(0, 0, 0, .9);
+  padding: 25px 50px;
+  h2 {
+    font-size: 38px;
+    margin-bottom: 20px;
+    //font-weight: bold;
+  }
+  label {
+    color: $color-light-gray;
+    font-weight: normal;
+  }
+  input {
+    background: transparent !important;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px dashed $color-light-gray;
+    font-size: 4em;
+    font-weight: 300;
+    height: 1.2em;
+    padding: 10px;
+    margin-bottom: 25px;
+  }
+
+  .login-footer {
+    padding-top: 30px;
+    a {
+      color: #fff;
+    }
+    button {
+      border-radius: 2px;
+    }
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: #fff !important;
+}

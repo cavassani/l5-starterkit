@@ -16,7 +16,6 @@ class User extends BaseModel implements AuthenticatableContract, AuthorizableCon
 {
     use Authenticatable, EntrustUserTrait, CanResetPassword;
 
-    protected $searchableColumns = ['name'];
     /**
      * Regras de validação deste model
      *
@@ -28,7 +27,7 @@ class User extends BaseModel implements AuthenticatableContract, AuthorizableCon
         'email' => ['required', 'email', 'unique:users'],
         'password' => ['required', 'min:6']
     ];
-
+    protected $searchableColumns = ['name'];
     /**
      * The attributes that are mass assignable.
      *
@@ -38,7 +37,8 @@ class User extends BaseModel implements AuthenticatableContract, AuthorizableCon
         'name',
         'email',
         'password',
-        'profilePicture'
+        'profilePicture',
+        'profilePictureMeta'
     ];
 
     /**
@@ -59,10 +59,18 @@ class User extends BaseModel implements AuthenticatableContract, AuthorizableCon
         return $this->belongsToMany('Lfalmeida\Lbase\Models\Role');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function profilePicture()
+    {
+        return $this->hasOne('Lfalmeida\Lbase\Models\Document', 'file_path', 'profile_picture');
+    }
 
     public function setPasswordAttribute($value)
     {
         $this->attributes['password'] = Hash::needsRehash($value) ? Hash::make($value) : $value;
     }
+
 
 }

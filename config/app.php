@@ -164,7 +164,7 @@ return [
         Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
         Barryvdh\Cors\ServiceProvider::class,
-
+        Intervention\Image\ImageServiceProvider::class,
 
     ],
 
@@ -214,6 +214,7 @@ return [
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
         'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
         'Entrust' => Zizaco\Entrust\EntrustServiceProvider::class,
+        'Image' => Intervention\Image\Facades\Image::class,
     ],
 
 ];

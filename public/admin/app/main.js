@@ -33,12 +33,16 @@ require.config({
         'bootstrap-switch': 'lib/bootstrap-switch/dist/js/bootstrap-switch.min',
         daterangepicker: 'lib/bootstrap-daterangepicker/daterangepicker',
         echarts: 'lib/echarts/dist/echarts',
-        select2: 'lib/select2.full.min'
+        select2: 'lib/select2.full.min',
+        cropper: 'lib/croppper/cropperjs.min'
     },
 
     shim: {
         underscore: {
             exports: '_'
+        },
+        croppper: {
+            deps: ['jquery']
         },
         chosen: {
             deps: ['jquery']

@@ -18,7 +18,7 @@ class UsersRepository extends BaseRepository
      *
      * @var array
      */
-    protected $relationships = ['roles'];
+    protected $relationships = ['roles', 'profilePicture'];
 
     /**
      * Define qual coluna deve ser usada na ordenação de resultados

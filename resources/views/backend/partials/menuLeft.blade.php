@@ -3,7 +3,7 @@
         <div class="side-menu-container">
             <div class="navbar-header">
                 <a class="navbar-brand" href="#">
-                    <span class="icon fa fa-gg"></span>
+                    <span class="icon fa fa-connectdevelop"></span>
                     <span class="title" data-app-title>{{env('APP_NAME')}}</span>
                 </a>
                 <button type="button" class="navbar-expand-toggle pull-right visible-xs">

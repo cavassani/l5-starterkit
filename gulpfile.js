@@ -43,10 +43,11 @@ gulp.task('phpunit', function () {
         binPath = './vendor/bin/phpunit';
     }
 
-    gulp.src('')
-        .pipe(phpunit(binPath)).on('error', function (a, b) {
-
-    });
+    return gulp.src('')
+        .pipe(phpunit(binPath), {
+            stopOnFailure: true,
+            stopOnError: true
+        });
 });
 
 
@@ -69,7 +70,13 @@ var bootstrapSass = {
     in: './node_modules/bootstrap-sass/',
     fonts: {
         in: ['./node_modules/bootstrap-sass/assets/fonts/bootstrap/*'],
-        out: './public/admin/fonts/'
+        admin: {
+            out: './public/admin/fonts/'
+        },
+        front: {
+            out: './public/front/fonts/'
+        }
+
     }
 };
 
@@ -81,6 +88,10 @@ var scss = {
     admin: {
         in: './public/admin/scss/**/*.scss',
         out: './public/admin/css'
+    },
+    front: {
+        in: './public/front/scss/**/*.scss',
+        out: './public/front/css'
     },
     options: {
         errLogToConsole: true,
@@ -96,16 +107,16 @@ var scss = {
 var autoprefixerOptions = {browsers: ['last 2 versions', '> 5%', 'Firefox ESR']};
 
 // copy bootstrap required fonts to dest
-gulp.task('fonts', function () {
+gulp.task('admin-fonts', function () {
     gulp.src(bootstrapSass.fonts.in)
-        .pipe(gulp.dest(bootstrapSass.fonts.out));
+        .pipe(gulp.dest(bootstrapSass.fonts.admin.out));
 
     return gulp.src(fontAwesome.in)
-        .pipe(gulp.dest(bootstrapSass.fonts.out));
+        .pipe(gulp.dest(bootstrapSass.fonts.admin.out));
 });
 
 
-gulp.task('sass-admin', ['fonts'], function () {
+gulp.task('sass-admin', ['admin-fonts'], function () {
     return gulp
         .src(scss.admin.in)
         .pipe(sourcemaps.init())
@@ -124,6 +135,37 @@ gulp.task('admin-watch', function () {
         });
 });
 
+
+
+// copy bootstrap required fonts to dest
+gulp.task('fonts-front', function () {
+    gulp.src(bootstrapSass.fonts.in)
+        .pipe(gulp.dest(bootstrapSass.fonts.front.out));
+
+    return gulp.src(fontAwesome.in)
+        .pipe(gulp.dest(bootstrapSass.fonts.front.out));
+});
+
+
+gulp.task('sass-front', ['fonts-front'], function () {
+    return gulp
+        .src(scss.front.in)
+        .pipe(sourcemaps.init())
+        .pipe(sass(scss.options).on('error', sass.logError))
+        // .pipe(sourcemaps.write())
+        .pipe(autoprefixer(autoprefixerOptions))
+        .pipe(gulp.dest(scss.front.out));
+});
+
+
+gulp.task('front-watch', function () {
+    return gulp
+        .watch(scss.front.in, ['sass-front'])
+        .on('change', function (event) {
+            console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
+        });
+});
+
 /**
  *
  */
@@ -132,4 +174,4 @@ gulp.task('docs', ['apidocs', 'sami-docs']);
 /**
  *
  */
-gulp.task('pre-commit', ['phpunit', 'docs']);
+// gulp.task('pre-commit', ['phpunit']);

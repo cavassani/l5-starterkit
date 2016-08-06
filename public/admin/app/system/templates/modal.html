@@ -1,6 +1,7 @@
 <div class="modal <%= typeof customClass != 'undefined' ? customClass : ''%>" role="dialog"
      aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="static">
     <div class="modal-dialog ">
+
         <div class="modal-content">
             <% if (title) { %>
             <div class="modal-header">
@@ -9,10 +10,6 @@
             </div>
             <% } %>
             <div class="modal-body">
-
-                <% if (!title) { %>
-                <button type="button" class="close dismiss" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <% } %>
                 <div class="innerView"></div>
             </div>
 
