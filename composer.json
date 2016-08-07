@@ -13,7 +13,7 @@
     "tymon/jwt-auth": "0.5.*",
     "zizaco/entrust": "dev-laravel-5",
     "barryvdh/laravel-cors": "^0.8.1",
-    "lfalmeida/lbase": ">=0.1.1",
+    "lfalmeida/lbase": ">=1.0.0",
     "league/flysystem-aws-s3-v3": "^1.0",
     "league/glide": "dev-master",
     "fzaninotto/faker": "~1.4",
