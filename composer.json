@@ -1,6 +1,7 @@
 {
-  "name": "laravel/laravel",
-  "description": "The Laravel Framework.",
+  "name": "lfalmeida/l5-starterkit",
+  "description": "Projeto base com alguns recursos funcionais habilitados para acelarar o desenvolvimento de novos projetos com Laravel",
+  "minimum-stability": "dev",
   "keywords": [
     "framework",
     "laravel"
