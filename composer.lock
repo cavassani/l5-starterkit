@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "830b75f35b61f1b8001ff2c3d28d2c01",
-    "content-hash": "d67a7f7296059e7a2d460e3e95f972c1",
+    "hash": "2b8b2d90fb9c3460f9d4abf313095532",
+    "content-hash": "71a1ce726205a35131e1ba1e3851be17",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -1312,16 +1312,16 @@
         },
         {
             "name": "lfalmeida/lbase",
-            "version": "0.1.0",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lfalmeida/lbase.git",
-                "reference": "cd2226b6fdfa674dab2f5ce870299cf0b8819d1b"
+                "reference": "dd1743df6052f04543daf18f0ef0ab4f16b914fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lfalmeida/lbase/zipball/cd2226b6fdfa674dab2f5ce870299cf0b8819d1b",
-                "reference": "cd2226b6fdfa674dab2f5ce870299cf0b8819d1b",
+                "url": "https://api.github.com/repos/lfalmeida/lbase/zipball/dd1743df6052f04543daf18f0ef0ab4f16b914fa",
+                "reference": "dd1743df6052f04543daf18f0ef0ab4f16b914fa",
                 "shasum": ""
             },
             "require": {
@@ -1335,11 +1335,6 @@
                 "squizlabs/php_codesniffer": "~2.3"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Lfalmeida\\Lbase\\": "src"
@@ -1363,7 +1358,7 @@
                 "Lbase",
                 "Lfalmeida"
             ],
-            "time": "2016-08-01 23:46:43"
+            "time": "2016-08-07 20:42:05"
         },
         {
             "name": "michelf/php-markdown",
