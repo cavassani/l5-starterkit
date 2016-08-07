@@ -20,7 +20,7 @@ Gerar as duas documentações simultaneamente:
 Executar a bateria de testes unitários com [phpunit](https://phpunit.de/):  
 `$ gulp phpunit`
 
----
+-----
 
 ## Autenticação com JSON Web Tokens
 Documentação na seção wiki do projeto: [tymondesigns/jwt-auth](https://github.com/tymondesigns/jwt-auth/wiki)
