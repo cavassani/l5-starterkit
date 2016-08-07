@@ -62,8 +62,11 @@
                 </a>
                 <ul class="dropdown-menu animated fadeInDown">
                     <li class="profile-img">
-                        <img src="{{Auth::user()->profilePicture()->first()->url .'?'. Auth::user()->profilePictureMeta}}"
-                             class="profile-img">
+                        @if(Auth::user()->profilePicture()->first())
+                            <img src="{{Auth::user()->profilePicture()->first()->url .'?'. Auth::user()->profilePictureMeta}}"
+                                 class="profile-img">
+                        @endif
+
                     </li>
                     <li>
                         <div class="profile-info">
