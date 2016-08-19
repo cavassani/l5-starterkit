@@ -24,11 +24,12 @@
                     <form id="admin-login" method="POST"
                           action="{{ config('admin.root') }}/login" autocomplete="off">
                         <div class="control">
-                            <input id="email" type="email" class="form-control" name="email" autofocus value="">
+                            <input id="email" type="email" class="form-control" name="email" autofocus value=""
+                                   placeholder="usuário">
                         </div>
                         <div class="control">
                             <input id="password" type="password" class="form-control" name="password" value=""
-                                   autocomplete="">
+                                   autocomplete="" placeholder="senha">
                         </div>
                         <div class="login-button text-center">
                             <button type="submit" id="login-btn" class="btn btn-primary"><i
