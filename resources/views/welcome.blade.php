@@ -6,9 +6,12 @@
     <h3 class="text-light-gray">Base para aplicações com Laravel, Bootstrap, Backbone e Marionnete</h3>
     <br>
     <div>
-        <!-- Place this tag where you want the button to render. -->
-        <a class="github-button" href="https://github.com/lfalmeida/l5-starterkit/archive/master.zip"
-           data-icon="octicon-cloud-download" data-style="mega" aria-label="Download lfalmeida/l5-starterkit on GitHub">Download</a>
+
+        <a class="github-button" href="https://github.com/lfalmeida/l5-starterkit" data-icon="octicon-star"
+           data-style="mega" data-count-href="/lfalmeida/l5-starterkit/stargazers"
+           data-count-api="/repos/lfalmeida/l5-starterkit#stargazers_count"
+           data-count-aria-label="# stargazers on GitHub" aria-label="Star lfalmeida/l5-starterkit on GitHub">Star</a>
+        <span style="margin-left: 10px "></span>
         <a class="github-button" href="https://github.com/lfalmeida" data-style="mega"
            data-count-href="/lfalmeida/followers" data-count-api="/users/lfalmeida#followers"
            data-count-aria-label="# followers on GitHub" aria-label="Follow @lfalmeida on GitHub">Follow @lfalmeida</a>
