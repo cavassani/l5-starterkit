@@ -5,4 +5,5 @@ Homestead.yaml
 Homestead.json
 .env
 .idea
-composer.lock
+# Para deploy no Heroku, o composer.lock precisa estar versionado
+#composer.lock
