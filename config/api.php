@@ -12,6 +12,6 @@ return [
     |
     |
     */
-    'root' => sprintf('//api.%s/%s', env('APP_DOMAIN'), env('API_VESRION', 'v1'))
+    'root' => sprintf('//%s/api/%s', env('APP_DOMAIN'), env('API_VESRION', 'v1'))
 ];
 
