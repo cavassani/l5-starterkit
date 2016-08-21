@@ -165,6 +165,8 @@ return [
         Zizaco\Entrust\EntrustServiceProvider::class,
         Barryvdh\Cors\ServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        Canducci\ZipCode\Providers\ZipCodeServiceProvider::class,
+        Canducci\ZipCode\Providers\ZipCodeAddressServiceProvider::class,
 
     ],
 
@@ -215,6 +217,8 @@ return [
         'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
         'Entrust' => Zizaco\Entrust\EntrustServiceProvider::class,
         'Image' => Intervention\Image\Facades\Image::class,
+        'ZipCode'   => Canducci\ZipCode\Facades\ZipCode::class,
+        'Address'   => Canducci\ZipCode\Facades\ZipCodeAddress::class,
     ],
 
 ];

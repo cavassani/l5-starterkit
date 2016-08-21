@@ -18,6 +18,7 @@ class StatesController extends ApiBaseController
         parent::__construct($repository);
     }
 
+
     public function cities($id)
     {
         $cities = State::find($id)->cities()->get();

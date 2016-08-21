@@ -57,10 +57,14 @@ $apiRoutes = function () {
      * Acessadas sem token
      */
     Route::group(['middleware' => ['throttle:60,1'], 'namespace' => 'Api\V1'], function () {
+        // Estados e cidades
         Route::resource('cities', 'CitiesController');
-
         Route::resource('states', 'StatesController');
         Route::get('states/{id}/cities', 'StatesController@cities');
+
+        // Consultas CEP
+        Route::get('zipcode/{cep}', 'ZipCodeController@findByCep');
+
     });
 
     /**

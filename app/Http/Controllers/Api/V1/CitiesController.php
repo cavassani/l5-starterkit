@@ -51,7 +51,6 @@ class CitiesController extends ApiBaseController
      * @apiSampleRequest  /api/v1/cities/:id
      *
      *
-     * @apiUse            ObjectSuccess
      *
      */
 

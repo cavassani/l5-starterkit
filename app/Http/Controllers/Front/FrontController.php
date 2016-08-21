@@ -4,16 +4,20 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
+use App\Repositories\StatesRepository;
 
 class FrontController extends Controller
 {
+    private $statesRepository;
+
     /**
      * Create a new controller instance.
      *
-     *
+     * @param StatesRepository $statesRepository
      */
-    public function __construct()
+    public function __construct(StatesRepository $statesRepository)
     {
+        $this->statesRepository = $statesRepository;
         $this->middleware('auth');
     }
 
@@ -24,6 +28,7 @@ class FrontController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $data = $this->statesRepository->all();
+        return view('home', compact('data'));
     }
 }
