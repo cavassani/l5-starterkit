@@ -54,6 +54,16 @@ $apiRoutes = function () {
     });
 
     /**
+     * Acessadas sem token
+     */
+    Route::group(['middleware' => ['throttle:60,1'], 'namespace' => 'Api\V1'], function () {
+        Route::resource('cities', 'CitiesController');
+
+        Route::resource('states', 'StatesController');
+        Route::get('states/{id}/cities', 'StatesController@cities');
+    });
+
+    /**
      * Acessadas somente com Token
      */
     Route::group(['middleware' => ['token.role:admin'], 'namespace' => 'Api\V1'], function () {
