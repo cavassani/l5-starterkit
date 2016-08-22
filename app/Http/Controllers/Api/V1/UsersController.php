@@ -19,13 +19,37 @@ class UsersController extends ApiBaseController
         parent::__construct($repository);
     }
 
+
+
     /**
-     * Store a newly created resource in storage.
+     * Cria um usuário
+     *
+     *
+     *
+     * @SWG\Post(path="/users",
+     *     tags={"Users"},
+     *     summary="Criar usuário",
+     *     description="Cria um registro de usuário.",
+     *     operationId="createUser",
+     *     produces={"application/json"},
+     *     consumes={"application/json"},
+     *     @SWG\Parameter(
+     *          type="object",
+     *          in="body",
+     *          name="User",
+     *          description="Objeto usuário que será salvo",
+     *          @SWG\Schema(ref="#/definitions/User")
+     *     ),
+     *     @SWG\Response(response="default", description="successful operation")
+     * )
+
+     *
      *
      * @param  \Illuminate\Http\Request $request
      *
      * @return \Illuminate\Http\Response
      * @throws \Exception
+     *
      */
     public function store(Request $request)
     {
@@ -56,119 +80,81 @@ class UsersController extends ApiBaseController
         ]);
     }
 
-    /**
-     * @apiDefine HeaderToken
-     * @apiHeader {String} Authorization Bearer Token. Ex.: "Bearer: TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ"
-     */
 
     /**
-     * @apiDefine PaginationParams
-     * @apiParam {Number} perPage Total de registros por página (opcional)
-     * @apiParam {Number} page    Página desejada (opcional)
-     */
-
-    /**
-     * @apiDefine CreateUpdateSuccess
-     * @apiSuccess {String} status    Status retornado.
-     * @apiSuccess {Object} data      Objeto contendo a entidade criada ou atualizada.
-     * @apiSuccess {String} message   Mensagem.
-     */
-
-    /**
-     * @apiDefine BooleanSuccess
-     * @apiSuccess {String} status    Status retornado.
-     * @apiSuccess {Boolean} data     Boolean indicando o sucesso ou falha da operação
-     * @apiSuccess {String} message   Mensagem.
-     */
-
-    /**
-     * @apiDefine         PaginationSuccess
-     * @apiSuccessExample Success-Response:
-     * HTTP/1.1 200 OK
-     * {
-     *     "status": "success",
-     *         "data": [{
-     *             "property": "Value",
-     *         }, {
-     *             "property": "Value",
-     *         }],
-     *         "paging": {
-     *             "total": 3,
-     *             "perPage": 15,
-     *             "currentPage": 1,
-     *             "lastPage": 1,
-     *             "from": 1,
-     *             "to": 3,
-     *             "previous": null,
-     *             "next": null
-     *         },
-     *         "message": "OK."
-     * }
+     * Atualiza o cadastro de um usuário
      *
-     * @apiSuccess {String}   status    Status da api.
-     * @apiSuccess {Object[]} data      Array contendo os objetos retornados.
-     * @apiSuccess {Object}   paging    Metadados sobre o estado da paginação
-     * @apiSuccess {String}   message   Mensagem.
+     *
+     *
+     * @SWG\Put(path="/users/{id}",
+     *     tags={"Users"},
+     *     summary="Atualizar usuário",
+     *     description="Atualiza o registro de um usuário.",
+     *     operationId="updateUser",
+     *     produces={"application/json"},
+     *     consumes={"application/json"},
+     *     @SWG\Parameter(
+     *         in="path",
+     *         name="id",
+     *         type="integer",
+     *         description="id do usuário",
+     *         required=true
+     *     ),
+     *     @SWG\Parameter(
+     *          type="object",
+     *          in="body",
+     *          name="User",
+     *          description="Objeto usuário que será salvo",
+     *          @SWG\Schema(ref="#/definitions/User")
+     *     ),
+     *     @SWG\Response(response="default", description="successful operation")
+     * )
+
+     *
+     *
+     * @param  \Illuminate\Http\Request $request
+     *
+     * @return \Illuminate\Http\Response
+     * @throws \Exception
      *
      */
 
 
     /**
-     * Método List
-     *
-     * @apiDescription    Lista os usuários com paginação de resultados.
+     * Listar usuários
      *
      *
-     * @apiUse            HeaderToken
-     * @api               {get} /api/v1/users List
-     * @apiVersion        1.0.0
-     * @apiName           List Users
-     * @apiGroup          Users
-     * @apiSampleRequest  /api/v1/users
-     *
-     *
-     * @apiUse            PaginationParams
-     * @apiUse            PaginationSuccess
-     *
+     * @SWG\Get(path="/users",
+     *   tags={"Users"},
+     *   summary="Listar usuários",
+     *   description="Retorna uma lista de usuários com paginação",
+     *   operationId="listUsers",
+     *   produces={"application/json"},
+     *   consumes={"application/json"},
+     *   @SWG\Response(response="default", description="successful operation")
+     * )
      */
 
-
     /**
-     * Método Get
-     *
-     * @apiDescription    Obtem um usuário específico. O identificador do usuário deve ser passado na url no local
-     *                    indicado <strong>:id</strong>
-     *
-     * @apiUse            HeaderToken
-     * @api               {get} /api/v1/users/:id Get
-     * @apiVersion        1.0.0
-     * @apiName           Get User
-     * @apiGroup          Users
-     * @apiSampleRequest  /api/v1/users/:id
+     * Obter um usuário através do id
      *
      *
-     * @apiUse            BooleanSuccess
-     *
-     */
-
-
-    /**
-     * Método Create
-     *
-     * @apiDescription    Cria um usuário.
-     * @apiUse            HeaderToken
-     * @api               {post} /api/v1/users Create
-     * @apiVersion        1.0.0
-     * @apiName           Create User
-     * @apiGroup          Users
-     * @apiSampleRequest  /api/v1/users
-     *
-     * @apiParam {String} name  Nome do Usuário
-     * @apiParam {String} email Email do usuário
-     * @apiParam {String} password Senha em texto pleno
-     *
-     * @apiUse            CreateUpdateSuccess
-     *
+     * @SWG\Get(path="/users/{id}",
+     *   tags={"Users"},
+     *   summary="Obter um usuário",
+     *   description="Retorna um usuário a pertir do id informado",
+     *   operationId="getUser",
+     *   produces={"application/json"},
+     *   consumes={"application/json"},
+     *   @SWG\Parameter(
+     *     in="path",
+     *     name="id",
+     *     type="integer",
+     *     description="id do usuário para consulta",
+     *     required=true
+     *   ),
+     *   @SWG\Response(response="default", description="successful operation")
+     * )
      */
 
 

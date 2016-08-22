@@ -24,7 +24,8 @@
     "symfony/dom-crawler": "2.8.*|3.0.*",
     "sami/sami": "dev-master",
     "filp/whoops": "^1.1",
-    "canducci/zipcode": "1.*"
+    "canducci/zipcode": "1.*",
+    "zircote/swagger-php": "^2.0"
   },
   "require-dev": {
 

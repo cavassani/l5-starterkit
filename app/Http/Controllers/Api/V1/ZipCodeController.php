@@ -10,19 +10,25 @@ class ZipCodeController extends Controller
 {
 
     /**
-     * Método Get
-     *
-     * @apiDescription    Obtem um usuário específico. O identificador do usuário deve ser passado na url no local
-     *                    indicado <strong>:id</strong>
-     *
-     * @api               {get} /api/v1/zipcode/:zipcode Get
-     * @apiVersion        1.0.0
-     * @apiName           Get ZipCode Info
-     * @apiGroup          ZipCode
-     * @apiSampleRequest  /api/v1/zipcode/86430000
+     *  Retorna informações para o cep fornecido
      *
      *
-     *
+     * @SWG\Get(path="/zipcode/{cep}",
+     *   tags={"ZipCode"},
+     *   summary="Informações sobre CEP",
+     *   description="Retorna informações para o cep fornecido",
+     *   operationId="zipcodeData",
+     *   produces={"application/json"},
+     *   consumes={"application/json"},
+     *   @SWG\Parameter(
+     *     in="path",
+     *     name="cep",
+     *     type="string",
+     *     description="CEP para consulta",
+     *     required=true
+     *   ),
+     *   @SWG\Response(response="default", description="successful operation")
+     * )
      *
      */
     public function findByCep($cep)
