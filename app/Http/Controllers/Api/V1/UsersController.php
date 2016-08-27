@@ -153,7 +153,7 @@ class UsersController extends ApiBaseController
      *     description="id do usuário para consulta",
      *     required=true
      *   ),
-     *   @SWG\Response(response="default", description="successful operation")
+     *   @SWG\Response(response="default", description="successful operation"),
      * )
      */
 

@@ -47,7 +47,15 @@ define('API_HOST', 'api.starterkit.app');
  *     @SWG\Property(property="email", type="string"),
  *     @SWG\Property(property="password", type="string"),
  *     @SWG\Property(property="name", type="string"),
-
  * )
  *
+ *      @SWG\Definition(
+ *     type="object",
+ *     definition="Error",
+ * 			required={"status", "code", "message"},
+ *			@SWG\Property(property="status", type="string"),
+ *			@SWG\Property(property="code", type="integer"),
+ *			@SWG\Property(property="message", type="string"),
+ * 		),
  * */
+
