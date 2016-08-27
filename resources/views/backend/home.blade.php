@@ -7,7 +7,7 @@
 
 </head>
 <body class="flat-blue">
-<div class="app-container"> <!-- expanded -->
+<div class="app-container expanded">
     <div class="row content-container">
         @include('backend.partials.menuTop')
         @include('backend.partials.menuLeft')
