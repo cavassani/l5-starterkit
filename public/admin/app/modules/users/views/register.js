@@ -34,11 +34,16 @@ define([
 
         onRender: function () {
 
-            this.$('select').select2({
+            this.$('.select2').select2({
                 allowClear: true,
                 width: '100%',
                 placeholder: "Selecione uma opção"
 
+            });
+
+            this.$('.select2').on('select2:select', function() {  // when the value changes
+                console.log('event');
+                $(this).valid(); // trigger validation on this element
             });
 
             if (this.model.get('id')) {
