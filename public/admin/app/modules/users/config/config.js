@@ -7,21 +7,23 @@ define([], function () {
             '#password': 'password',
             '#roles': {
                 observe: 'roles',
-                initialize: function ($el) {
-                    $el.select2({width: '100%', allowClear: true});
-                },
-                onSet: function(val) {
-                    this.model.set('roles', val);
-                    return val;
-                }
+                // initialize: function ($el) {
+                //     $el.select2({width: '100%', allowClear: true});
+                // },
+                // onSet: function(val) {
+                //     this.model.set('roles', val);
+                //     return val;
+                // }
             },
-            '#profilePicture': 'profilePicture'
+            '#profilePicture': 'profilePicture',
+            '#state': 'state',
+            '#city': 'cityId'
         },
         validation: {
             errorPlacement: function (error, element) {
             },
             onfocusout: false,
-            debug: true,
+
             rules: {
                 'name': {
                     required: true

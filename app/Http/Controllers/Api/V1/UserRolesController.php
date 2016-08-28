@@ -52,7 +52,7 @@ class UserRolesController extends Controller
     {
         
         $roles = Input::get('roles');
-        $updatedUser = $this->repository->attach($userId, $roles);
+        $updatedUser = $this->repository->attachRoles($userId, $roles);
         return Response::apiResponse([
             'data' => $updatedUser
         ]);
@@ -71,7 +71,7 @@ class UserRolesController extends Controller
     public function destroy($userId, $roles)
     {
         try {
-            $wasSuccessful = $this->repository->detach($userId, $roles);
+            $wasSuccessful = $this->repository->detachRoles($userId, $roles);
             return Response::apiResponse([
                 'data' => $wasSuccessful
             ]);

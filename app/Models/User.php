@@ -38,7 +38,8 @@ class User extends BaseModel implements AuthenticatableContract, AuthorizableCon
         'email',
         'password',
         'profilePicture',
-        'profilePictureMeta'
+        'profilePictureMeta',
+        'cityId'
     ];
 
     /**
@@ -57,6 +58,11 @@ class User extends BaseModel implements AuthenticatableContract, AuthorizableCon
     public function roles()
     {
         return $this->belongsToMany('Lfalmeida\Lbase\Models\Role');
+    }
+
+    public function city()
+    {
+        return $this->belongsTo('App\Models\City');
     }
 
     /**

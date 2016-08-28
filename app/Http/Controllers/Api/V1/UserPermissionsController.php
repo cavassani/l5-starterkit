@@ -52,7 +52,7 @@ class UserPermissionsController extends Controller
     public function store($userId)
     {
         $roles = Input::get('roles');
-        $updatedUser = $this->repository->attach($userId, $roles);
+        $updatedUser = $this->repository->attachRoles($userId, $roles);
 
         return Response::apiResponse([
             'data' => $updatedUser
@@ -74,7 +74,7 @@ class UserPermissionsController extends Controller
     {
         try {
 
-            $detachWasSuccessful = $this->repository->detach($userId, $roles);
+            $detachWasSuccessful = $this->repository->detachRoles($userId, $roles);
 
             return Response::apiResponse([
                 'data' => $detachWasSuccessful

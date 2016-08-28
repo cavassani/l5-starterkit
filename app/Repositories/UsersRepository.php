@@ -2,7 +2,10 @@
 
 namespace App\Repositories;
 
+use Illuminate\Support\Facades\DB;
+use Lfalmeida\Lbase\Exceptions\RepositoryException;
 use Lfalmeida\Lbase\Models\Role;
+use App\Exceptions\ValidationException;
 use Lfalmeida\Lbase\Repositories\Repository as BaseRepository;
 use Mockery\CountValidator\Exception;
 
@@ -18,7 +21,7 @@ class UsersRepository extends BaseRepository
      *
      * @var array
      */
-    protected $relationships = ['roles', 'profilePicture'];
+    protected $relationships = ['roles', 'profilePicture', 'city'];
 
     /**
      * Define qual coluna deve ser usada na ordenação de resultados
@@ -38,6 +41,76 @@ class UsersRepository extends BaseRepository
     }
 
     /**
+     * Cria um registro
+     *
+     * @param array $data Colunas e valores para serem salvos
+     *
+     * @return mixed
+     * @throws ApiException
+     * @throws ValidationException
+     */
+    public function create(array $data)
+    {
+        $model = $this->makeModel();
+        $model->fill($data);
+
+        $wasSaved = $model->save();
+
+        if ($wasSaved) {
+            $id = (int)$model->id;
+
+            if (isset($data['roles'])) {
+                $model->roles()->sync($data['roles']);
+            }
+
+
+            return $this->find($id);
+        }
+
+        $errorMessage = "Não foi possível salvar.";
+
+        if (method_exists($model, 'isValid')) {
+            $exception = new ValidationException();
+            $exception->setMessages($model->getValidationErrors()->all());
+
+            throw $exception;
+        }
+        throw new ApiException($errorMessage);
+
+    }
+
+
+    /**
+     * Atualiza um model de acordo com id fornecido e as propriedades informadas
+     *
+     * @param integer $id
+     * @param array $data Array mapeando as colunas e valores a serem atualizados
+     *
+     * @return mixed
+     * @throws RepositoryException
+     */
+    public function update($id, array $data)
+    {
+        $model = $this->find($id);
+
+        if (!$model) {
+            throw new RepositoryException("O item não solicitado não existe.");
+        }
+
+        $model->fill($data);
+
+        $roles = isset($data['roles']) ? $data['roles'] : [];
+        $model->roles()->sync($roles);
+
+        $model->update();
+
+
+        return $this->find($id);
+
+    }
+
+
+    /**
      * Atribui Roles para um usuário
      *
      * @param $userId int Identificador do usuário que receberá o cargo
@@ -45,10 +118,10 @@ class UsersRepository extends BaseRepository
      *
      * @return mixed
      */
-    public function attach($userId, $roles)
+    public function attachRoles($userId, $roles)
     {
         try {
-            $user = $this->detach($userId, $roles);
+            $user = $this->detachRoles($userId, $roles);
             $user->roles()->attach($this->processRolesParam($roles));
         } catch (Exception $e) {
             throw $e;
@@ -62,10 +135,10 @@ class UsersRepository extends BaseRepository
      * @param $userId int Identificador do usuário que receberá o cargo
      * @param $roles  mixed Pode ser um id de cargo ou um array de id's de cargo
      *
-     * @return \App\Models\User
+     * @return \Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Eloquent\Model
      * @throws \Exception
      */
-    public function detach($userId, $roles)
+    public function detachRoles($userId, $roles)
     {
         $user = $this->model->with('roles')->find($userId);
 
