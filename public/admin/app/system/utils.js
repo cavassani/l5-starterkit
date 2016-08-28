@@ -144,11 +144,12 @@ define(['toastr', 'idleTimer'], function (toastr) {
             var $appContainer = $('.app-container');
             var $navbarExpandToggle = $(".navbar-expand-toggle");
             var $navbarRightExpandToggle = $(".navbar-right-expand-toggle");
+            var expanded = JSON.parse(window.localStorage.getItem('menuExpanded')) ;
 
-            if (JSON.parse(window.localStorage.getItem('menuExpanded'))) {
-                $appContainer.addClass('expanded');
-            } else {
+            if (expanded === false) {
                 $appContainer.removeClass('expanded');
+            } else {
+                $appContainer.addClass('expanded');
             }
 
             $navbarExpandToggle.click(function () {

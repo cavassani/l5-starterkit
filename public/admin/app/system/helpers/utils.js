@@ -5,7 +5,6 @@ define([], function () {
 
     'use strict';
 
-
     return {
 
         updateSelect2: function (userOptions) {
@@ -14,7 +13,8 @@ define([], function () {
                 defaults = {
                     valueProperty: 'id',
                     labelProperty: 'name',
-                    resourceName: ''
+                    resourceName: '',
+                    separator: '/'
                 },
                 conf = $.extend(defaults, userOptions);
 
@@ -25,23 +25,74 @@ define([], function () {
                 token: window.localStorage.getItem('token')
             });
 
+            $(conf.selector).select2({
+                data: null
+            }).empty();
+
             request.done(function (response) {
-                var data = [];
+
+                var data = [{id: '', 'text': ''}];
                 _.each(response.data, function (item) {
+
                     data.push({
-                        id: item[conf.valueProperty],
-                        text: item[conf.labelProperty]
+                        id: this.parseItemSelect(item, conf.valueProperty),
+                        text: this.parseItemSelect(item, conf.labelProperty, conf.separator)
                     });
+
                 }, this);
 
                 $(conf.selector).select2({
-                    "data": data
+                    data: data
                 });
 
             }.bind(this));
 
             return request;
 
+        },
+
+        parseItemSelect: function (item, property, separator) {
+
+            var array = property.split('/');
+
+            var array2 = [];
+            var part = '';
+            var result = '';
+
+            $.each(array, function (k, v) {
+                array2.push(array[k]);
+            });
+
+            $.each(array2, function (k, v) {
+
+                //verifica se o index do array nÃ£o Ã© o primeiro
+                //caso nÃ£o seja, contatena o simbolo separador na label
+                if(k != 0){
+                    result += ' '+separator+' ';
+                }
+
+                //cria um array, onde cada index serÃ¡ usado
+                //para recuperar o valor desejado do objeto
+                part = v.split('.');
+
+                if(part.length > 1){
+                    //se o array tiver mais de 1 posiÃ§Ã£o, faz a busca
+                    //atÃ© chegar no valor desejado
+                    var itemAux = item;
+                    $.each(part, function (k, v) {
+                        itemAux = itemAux[v];
+                    });
+                }
+                else{
+                    //se tiver somente uma posiÃ§Ã£o jÃ¡ recupera o valor desejado
+                    itemAux = item[part];
+                }
+
+                result += itemAux;
+
+            });
+
+            return result;
         },
 
         updateCombo: function (userOptions) {
@@ -114,7 +165,7 @@ define([], function () {
             var self = this;
             $.validator.addMethod("cpf", function (value, element, params) {
                 return this.optional(element) || self.validateCPF(value);
-            }, jQuery.validator.format("O CPF informado não é válido"));
+            }, jQuery.validator.format("O CPF informado nÃ£o Ã© vÃ¡lido"));
         },
 
         validateCNPJ: function (cnpj) {
@@ -178,10 +229,17 @@ define([], function () {
             var self = this;
             $.validator.addMethod("cnpj", function (value, element, params) {
                 return this.optional(element) || self.validateCNPJ(value);
-            }, jQuery.validator.format("O CNPJ informado não é válido"));
+            }, jQuery.validator.format("O CNPJ informado nÃ£o Ã© vÃ¡lido"));
+        },
+
+        addRetina: function (e) {
+            console.log('retina');
+            console.log($(e.currentTarget).children());
+
         }
 
 
     };
+
 
 });
