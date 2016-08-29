@@ -30,16 +30,20 @@ define([
             });
 
 
-
         },
 
         onRender: function () {
 
-            this.$('select').select2({
+            this.$('.select2').select2({
                 allowClear: true,
                 width: '100%',
                 placeholder: "Selecione uma opção"
 
+            });
+
+            this.$('.select2').on('select2:select', function() {  // when the value changes
+                console.log('event');
+                $(this).valid(); // trigger validation on this element
             });
 
             if (this.model.get('id')) {
@@ -80,24 +84,34 @@ define([
                 'selector': '#state',
                 'resourceName': 'states'
             }).done(function () {
-                this.$('#states').trigger('change.select2');
+                setTimeout(function () {
+                    this.$('#states').trigger('change.select2');
+                }.bind(this), 1000);
                 this.stickit();
             }.bind(this));
         },
 
         updateComboCity: function () {
 
-            utils.updateSelect2({
-                'selector': '#city',
-                'resourceName': ['states', this.model.get('state'), 'cities'].join('/')
-            }).done(function () {
-                this.stickit();
+            if (this.model.get('state')) {
+                utils.updateSelect2({
+                    'selector': '#city',
+                    'resourceName': ['states', this.model.get('state'), 'cities'].join('/')
+                }).done(function () {
+                    this.stickit();
 
-                setTimeout(function () {
-                    this.$('#city').trigger('change.select2');
-                }.bind(this), 1000);
+                    setTimeout(function () {
+                        this.$('#states').trigger('change.select2');
+                        this.$('#city').trigger('change.select2');
+                    }.bind(this), 1000);
 
-            }.bind(this));
+                }.bind(this));
+            } else {
+                this.model.set('cityId', null);
+                this.$('#city').select2({
+                    data: null
+                }).empty();
+            }
 
         },
 
@@ -141,7 +155,7 @@ define([
 
                     setTimeout(function () {
                         this.$('#state').trigger('change.select2');
-                    }.bind(this), 1000);
+                    }.bind(this), 2000);
 
                 }.bind(this));
             }
@@ -155,10 +169,9 @@ define([
                 endpoint = app.config.getEndPoint('users'),
                 method = 'POST';
 
-                // if(!requestData.roles.length) {
-                //     requestData.roles = [''];
-                // }
-
+            if (!requestData.roles.length) {
+                requestData.roles = [''];
+            }
 
 
             if (this.model.get('id')) {

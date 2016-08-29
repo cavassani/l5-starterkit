@@ -1312,16 +1312,16 @@
         },
         {
             "name": "lfalmeida/lbase",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lfalmeida/lbase.git",
-                "reference": "7957024fbd30909e005bad683ffe097c66a2a9dc"
+                "reference": "fc2104f29b77a9a075a065d6a7cbe8d87bd89aa7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lfalmeida/lbase/zipball/7957024fbd30909e005bad683ffe097c66a2a9dc",
-                "reference": "7957024fbd30909e005bad683ffe097c66a2a9dc",
+                "url": "https://api.github.com/repos/lfalmeida/lbase/zipball/fc2104f29b77a9a075a065d6a7cbe8d87bd89aa7",
+                "reference": "fc2104f29b77a9a075a065d6a7cbe8d87bd89aa7",
                 "shasum": ""
             },
             "require": {
@@ -1358,7 +1358,7 @@
                 "Lbase",
                 "Lfalmeida"
             ],
-            "time": "2016-08-18 18:52:24"
+            "time": "2016-08-26 17:58:15"
         },
         {
             "name": "michelf/php-markdown",

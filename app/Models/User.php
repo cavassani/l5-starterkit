@@ -73,10 +73,12 @@ class User extends BaseModel implements AuthenticatableContract, AuthorizableCon
         return $this->hasOne('Lfalmeida\Lbase\Models\Document', 'file_path', 'profile_picture');
     }
 
+    /**
+     * @param $value
+     */
     public function setPasswordAttribute($value)
     {
         $this->attributes['password'] = Hash::needsRehash($value) ? Hash::make($value) : $value;
     }
-
 
 }

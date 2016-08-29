@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Exceptions\ApiException;
 use Illuminate\Support\Facades\DB;
 use Lfalmeida\Lbase\Exceptions\RepositoryException;
 use Lfalmeida\Lbase\Models\Role;
@@ -99,11 +100,12 @@ class UsersRepository extends BaseRepository
 
         $model->fill($data);
 
-        $roles = isset($data['roles']) ? $data['roles'] : [];
-        $model->roles()->sync($roles);
-
         $model->update();
 
+        if (isset($data['roles'])) {
+            $roles = $this->processRolesParam($data['roles']);
+            $model->roles()->sync($roles);
+        }
 
         return $this->find($id);
 
